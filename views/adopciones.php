@@ -74,6 +74,69 @@
           </div>  
         </div>
       </div>
+      <div class="row mt-3" >
+        <div class="col-1">            
+        </div>
+        <div class="col">
+          <div class="card mb-3">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/Sun_Dog_Dalmatian.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dalmatian</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>             
+              <button type="button" class="btn btn-primary">Más información</button>
+            </div>
+          </div>  
+        </div>
+
+        <div class="col">
+          <div class="card mb-3">
+            <img src="https://www.akc.org/wp-content/uploads/2017/11/German-Shepherd-on-White-00.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Pastor Alemán</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>            
+              <button type="button" class="btn btn-primary">Más información</button>
+            </div>
+          </div>  
+        </div>
+
+        <div class="col">
+          <div class="card mb-3">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Bulldog_inglese.jpg/1200px-Bulldog_inglese.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Bulldog</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <button type="button" class="btn btn-primary">Más información</button>
+            </div>
+          </div>  
+        </div>
+        
+        <div class="col">
+          <div class="card mb-3">
+            <img src="https://www.purina.es/sites/default/files/styles/ttt_image_510/public/2024-02/sitesdefaultfilesstylessquare_medium_440x440public2022-09golden20retriever.jpg?itok=48StbVfe" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Golden Retriever</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <button type="button" class="btn btn-primary">Más información</button>
+            </div>
+          </div>  
+        </div>
+
+        <div class="col">
+          <div class="card mb-3">
+            <img src="https://cdn.britannica.com/16/234216-050-C66F8665/beagle-hound-dog.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Beagle</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <button type="button" class="btn btn-primary">Más información</button>
+            </div>
+          </div>  
+        </div>
+
+        <div class="col-1">          
+            </div>
+          </div>  
+        </div>
+      </div>      
 </section>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
