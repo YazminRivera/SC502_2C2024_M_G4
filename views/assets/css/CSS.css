@@ -1,16 +1,8 @@
 .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
     }
 
-#animales img{
+#empleados img{
     height: 200px;
-    width: 200px;
+    width: 100%;    
 }
-
-#animales img{    
-    height: 250px;
-    width: 250px;    
-    }

@@ -9,63 +9,72 @@
 </head>
 <body>
 <h1 class="text-center">Adopciones</h1>
-      <br>
-      <div class="row">
-        <div class="col-1">  
-<section class="container" id="animales">                        
+
+<section id="empleados">    
+<div class="row mt-3" >
+        <div class="col-1">            
         </div>
         <div class="col">
           <div class="card mb-3">
-            <img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/322/322868/golden-retriever-puppy.jpg" class="card-img-top" alt="...">
+            <img src="https://www.purina.co.uk/sites/default/files/styles/square_medium_440x440/public/2022-07/Dachshund-Miniature-Smooth-Haired.jpg?itok=zFv4D76f" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>              
+              <h5 class="card-title">Dachshund</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>             
+              <button type="button" class="btn btn-primary">Más información</button>
             </div>
           </div>  
         </div>
+
+        <div class="col">
+          <div class="card mb-3">
+            <img src="https://i.pinimg.com/564x/87/29/59/87295912d6f0d913930fc37dfcc0e31c.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Husky</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>            
+              <button type="button" class="btn btn-primary">Más información</button>
+            </div>
+          </div>  
+        </div>
+
+        <div class="col">
+          <div class="card mb-3">
+            <img src="https://hips.hearstapps.com/hmg-prod/images/small-fluffy-dog-breeds-maltipoo-663009b6293cc.jpg?crop=0.668xw:1.00xh;0.143xw,0&resize=980:*" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Maltipoo</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <button type="button" class="btn btn-primary">Más información</button>
+            </div>
+          </div>  
+        </div>
+        
         <div class="col">
           <div class="card mb-3">
             <img src="https://www.thesprucepets.com/thmb/hxWjs7evF2hP1Fb1c1HAvRi_Rw0=/2765x0/filters:no_upscale():strip_icc()/chinese-dog-breeds-4797219-hero-2a1e9c5ed2c54d00aef75b05c5db399c.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>              
-            </div>
-          </div>  
-        </div>
-        <div class="col">
-          <div class="card mb-3">
-            <img src="https://cdn.britannica.com/13/234213-050-45F47984/dachshund-dog.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>              
-            </div>
-          </div>  
-        </div>
-        <div class="col">
-          <div class="card mb-3">
-            <img src="https://www.thesprucepets.com/thmb/SV1nJpvIHP0bgP0JkD8GUFgMeZ8=/3600x0/filters:no_upscale():strip_icc()/white-dog-breeds-4846529-hero-4bf084c93c5b45a292e30559bb7e50e8.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Pug</h5>
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <button type="button" class="btn btn-primary">Más información</button>
             </div>
           </div>  
         </div>
+
         <div class="col">
           <div class="card mb-3">
-            <img src="https://img.goodfon.com/wallpaper/big/f/5f/malamut-schenok-sobaka.webp" class="card-img-top" alt="...">
+            <img src="https://www.thesprucepets.com/thmb/ZVZtMyoEjEGtXIiwK2nxoQtsG5U=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/shih-tzu-dog-lying-on-a-newspaper-476683903-5816337c3df78cc2e891b5fd.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Shih Tzu</h5>
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <button type="button" class="btn btn-primary">Más información</button>
             </div>
           </div>  
         </div>
+
         <div class="col-1">          
             </div>
           </div>  
         </div>
       </div>
-    </section>
-
+</section>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
