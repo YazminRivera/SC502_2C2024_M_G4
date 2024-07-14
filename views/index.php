@@ -40,7 +40,28 @@
     </div>
 </section>
 
-
+<section id="infoPag">
+    <div id="quienes">
+        <h1>¿Quienes Somos?</h1>
+            <p>Somos un grupo de universitarios, nuestra mision es salvar, rehabilitar y encontrar hogares amorosos para animales sin hogar o en situacion de riesgo. Buscamos mejorar la vida de los animales en nuestra comunidad a traves de rescates, cuidados y educación.</p>
+    </div>
+    <div id="enfoque">
+        <h1>Enfoque</h1>
+            <p>Nuestra vision es un futuro donde todos los animales sean respetados y vivan libres de sufrimiento, abuso y explotacion.</p>
+    </div>
+    <div id="idea">
+        <h1>Motivo</h1>
+            <p>Debido a que la mayoria de anuncios de desaparicion, adopcion y castracion de animales se realizan por medio de publicaciones en redes sociales, buscamos centralizar estas noticias en un medio web donde los usuarios puedan ver diferentes secciones de adopcion, desaparicion e incluso rescate de animales que lo requieran.</p>
+    </div>
+    <div id="valores">
+        <h1>Valores</h1>
+            <p>Compromiso, compasión, transparencia y dedicación a la causa animal.</p>
+    </div>
+    <div id="invitacion">
+        <h1>Te invitamos</h1>
+            <p>Unete a nuestra causa como voluntario, donante o adoptante y ayuda a marcar la diferencia en la vida de un animal. Cada pequeño gesto cuenta.</p>
+    </div>
+</section>
 
 <footer>
         <div class="footer">

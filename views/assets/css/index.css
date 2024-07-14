@@ -1,15 +1,39 @@
+/* estilo para body */
 body{
     background-color: #82ffea;
 
 }
 
-
+/*estilo para las imnagenes del carousel*/
 .carousel-item img{
     width: 100%;
     height: 650px;
     padding-bottom: 50px;
 }
 
+/*estilo para la seccion infoPag */
+#infoPag {
+    padding: 50px; 
+}
+
+/*estilos para los div de informacion acerca de la pag */
+#infoPag div {
+    margin-bottom: 20px; 
+    text-align: center; 
+}
+
+/*estilo de titulos */
+#infoPag h1 {
+    margin-bottom: 40px; 
+}
+
+/*estilo de parrafos */
+#infoPag p {
+    margin-bottom: 40px; 
+}
+
+
+/* estilo para el footer*/
 footer{
     padding-top: 50px;
     text-align: center;

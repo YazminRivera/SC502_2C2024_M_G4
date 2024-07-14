@@ -2,7 +2,7 @@
 <div class="seccion1">
   <div class="container-fluid">
     <div class="d-flex justify-content-between align-items-center">
-      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/5871/5871586.png" alt="Logo" style="height: 80px;"></a>
+      <a href="index.php"><img src="https://cdn-icons-png.flaticon.com/512/5871/5871586.png" alt="Logo" style="height: 80px;"></a>
       <div>
         <a href="#" class="btn btnInicio">Iniciar Sesión</a>
         <a href="#" class="btn btnRegistro">Registrarse</a>
