@@ -20,9 +20,25 @@ $lugares = [
         'img' => 'https://doctoresrobert.files.wordpress.com/2021/01/cropped-drrobert-01.png',
         'infoLink' => '#'
     ],
-    
-    
+    [
+        'nombre' => 'Campaña 4',
+        'ubi' => 'Cartago',
+        'img' => 'https://doctoresrobert.files.wordpress.com/2021/01/cropped-drrobert-01.png',
+        'infoLink' => '#'
+    ],
 ];
+
+
+$filtrolugares = $lugares;
+
+//se revisa si hay informacion en el input a base de un GET
+if (!empty($_GET['search'])) {
+    $search = strtolower($_GET['search']); //strtolower convierte el string en minusculas aara que no haya problemas en la busqueda con mayusculas
+    $filtrolugares = array_filter($lugares, function ($lugar) use ($search) { //array_filter crea un nuevo arreglo en base a los elementos del arreglo lugares que cumplen con la condicion del callback, use incorpora a seacrh desde el html
+        return strpos(strtolower($lugar['ubi']), $search) !== false; // strpos busca la primera ocurrencia de $search comparando con ubi el cual es el parametro que se usa para filtarr la busqueda, !== false hace que el filtro devuelva un true si el filtro de busqueda esta en la cadena
+    });
+}
+
 
 ?>
 
@@ -47,11 +63,14 @@ $lugares = [
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="mb-3">Filtro de zona</h2>
-                <input type="search" class="form-control mb-4" placeholder="Buscar por zona">
+                <form>
+                    <input type="search" class="form-control mb-4" name="search" placeholder="Buscar por zona" value="<?= ($_GET['search']) ?? ''?>">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </form>
             </div>
         </div>
         <div class="row">
-            <?php foreach ($lugares as $lugar): ?>
+            <?php foreach ($filtrolugares as $lugar): ?>
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <img src="<?= $lugar['img'] ?>" class="card-img-top" alt="Campaña">
@@ -68,4 +87,3 @@ $lugares = [
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
-

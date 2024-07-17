@@ -18,6 +18,7 @@ body {
 .btn-primary {
     background-color: teal; 
     border-color: teal;
+    margin-bottom: 20px;
 }
 
 /*estilo para el input*/
