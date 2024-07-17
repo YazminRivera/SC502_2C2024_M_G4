@@ -1,0 +1,33 @@
+.registro {
+  background-color: #3fcfb7;
+  border-radius: 30px;
+}
+.form-label {
+  color: white;
+}
+.text {
+  background: white;
+  border-radius: 12px;
+  margin-right: 20px;
+}
+.textArea {
+  background: white;
+  border-radius: 15px;
+  margin-right: 20px;
+}
+.mb-3 {
+  margin-top: 10px;
+}
+.col-6 {
+  padding: 15px;
+}
+.btn-Enviar {
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: teal;
+  color: white;
+  border: solid teal;
+}
+.boton-end {
+  text-align: end;
+}
