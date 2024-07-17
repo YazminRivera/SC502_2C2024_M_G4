@@ -8,9 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
+<?php
+    include 'menu.php';
+    ?>
+    <br>
 <h1 class="text-center">Adopciones</h1>
-
-<section id="empleados">    
+<br>
+<section id="adopcionesDesapariciones">    
 <div class="row mt-3" >
         <div class="col-1">            
         </div>
@@ -22,7 +26,7 @@
               <p class="card-text text-center mt-3">Edad: </p>    
               <p class="card-text text-center">Ubicación: </p>  
               <div class="text-center">       
-              <button type="button" class="btn btn-success">Contactar</button>
+              <button class="btn-Contactar" type="submit">Contactar</button>
               </div>
             </div>
           </div>  
@@ -36,7 +40,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button type="button" class="btn btn-success">Contactar</button>
+              <button class="btn-Contactar" type="submit">Contactar</button>
               </div>
             </div>
           </div>  
@@ -50,7 +54,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button type="button" class="btn btn-success">Contactar</button>
+              <button class="btn-Contactar" type="submit">Contactar</button>
               </div>
             </div>
           </div>  
@@ -64,7 +68,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button type="button" class="btn btn-success">Contactar</button>
+              <button class="btn-Contactar" type="submit">Contactar</button>
               </div>
             </div>
           </div>  
@@ -78,7 +82,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button type="button" class="btn btn-success">Contactar</button>
+              <button class="btn-Contactar" type="submit">Contactar</button>
               </div>
             </div>
           </div>  
@@ -100,7 +104,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button type="button" class="btn btn-success">Contactar</button>
+              <button class="btn-Contactar" type="submit">Contactar</button>
               </div>
             </div>
           </div>  
@@ -114,7 +118,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button type="button" class="btn btn-success">Contactar</button>
+              <button class="btn-Contactar" type="submit">Contactar</button>
               </div>
             </div>
           </div>  
@@ -128,7 +132,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button type="button" class="btn btn-success">Contactar</button>
+              <button class="btn-Contactar" type="submit">Contactar</button>
               </div>
             </div>
           </div>  
@@ -142,7 +146,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button type="button" class="btn btn-success">Contactar</button>
+              <button class="btn-Contactar" type="submit">Contactar</button>
               </div>
             </div>
           </div>  
@@ -156,7 +160,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button type="button" class="btn btn-success">Contactar</button>
+              <button class="btn-Contactar" type="submit">Contactar</button>
               </div>           
             </div>
           </div>  

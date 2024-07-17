@@ -2,7 +2,14 @@
     display: flex;
     }
 
-#empleados img{
+#adopcionesDesapariciones img{
     height: 200px;
     width: 100%;    
 }
+.btn-Contactar {
+    padding: 6px 12px;
+    border-radius: 10px;
+    background-color: teal;
+    color: white;
+    border: solid teal;
+  }
