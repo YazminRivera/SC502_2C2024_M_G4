@@ -1,0 +1,28 @@
+body {
+    background-color: #f8f9fa;
+}
+
+/*estilo para las card */
+.card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /*sombra*/
+    border: none; /*sin bordes*/
+}
+
+/*estilo para las imagenes de los card*/
+.card-img-top {
+    height: 150px; /*altura fija para las imágenes*/
+    object-fit: cover; /*la imagen cubre completamente el area*/
+}
+
+/*estilo para el boton de busqueda*/
+.btn-primary {
+    background-color: teal; 
+    border-color: teal;
+}
+
+/*estilo para el input*/
+input[type="search"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px; 
+}

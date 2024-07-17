@@ -28,7 +28,7 @@
           <a class="nav-link" href="#">Adopciones</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Información Castraciones</a>
+          <a class="nav-link" href="infoCas.php">Información Castraciones</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Solicitar Apoyo</a>
