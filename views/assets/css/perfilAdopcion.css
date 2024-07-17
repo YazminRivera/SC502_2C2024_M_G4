@@ -1,0 +1,62 @@
+.recuadro{
+    background-color: #3fcfb7;
+    color: white;
+    padding: 24px;
+    border-radius: 10px;
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    height: 700px;
+}
+
+/*pfp de la mascota*/
+.pfp{
+    align-items: justify;
+    height: 300px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.form-control{
+    width: 200px;
+    background-color: teal;
+    border-color: teal;
+    color: white;
+}
+
+/*imagenes adicionales abajo de la pfp*/
+.small-img {
+    height: 100px;
+    width: 300px;
+    border-radius: 10px;
+    filter: grayscale(70%);
+}
+
+/*container para la api*/
+.ubi-container {
+    text-align: justify;
+    margin-top: 20px;
+}
+
+/*guia para la api*/
+.mapa { 
+    background-color: white;
+    border-radius: 15px;
+    border-color: teal;
+    height: 250px;
+    display: flex;
+    margin-top: 10px;
+}
+
+/*Boton de adoptar*/
+.btnAdoptar{
+    background-color: teal;
+    border-color: teal;
+    color: white;
+}
+
+/*Reservar el espacio del h2 para que este alineado*/
+.oculto {
+    visibility: hidden;
+}
+
