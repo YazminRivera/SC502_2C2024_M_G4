@@ -2,15 +2,6 @@
 .seccion1 {
   background-color: #35ad99;
   padding: 10px 20px;
-  position: fixed; /* Hace que la seccion sea fija */
-  top: 0; 
-  width: 100%; 
-  z-index: 1030; 
-}
-
-/* agregar un margen superior al contenido para que no quede oculto detrás del menú fijo */
-body {
-  margin-top: 156px; 
 }
 
 /* Seccion inferior */
@@ -18,10 +9,6 @@ body {
   background-color: #3fcfb7;
   text-align: center;
   padding: 20px 0;
-  position: fixed; 
-  top: 100px;
-  width: 100%;
-  z-index: 1020; /* Asegura que la barra inferior esté debajo de .seccion1 */
 }
 
 /* Centrar los elementos de la sección inferior */
