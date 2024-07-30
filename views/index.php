@@ -40,50 +40,46 @@
     </div>
 </section>
 
-<section id="infoPag">
-    <div id="quienes">
-        <h1>¿Quienes Somos?</h1>
-            <p>Somos un grupo de universitarios, nuestra mision es salvar, rehabilitar y encontrar hogares amorosos para animales sin hogar o en situacion de riesgo. Buscamos mejorar la vida de los animales en nuestra comunidad a traves de rescates, cuidados y educación.</p>
-    </div>
-    <div id="enfoque">
-        <h1>Enfoque</h1>
-            <p>Nuestra vision es un futuro donde todos los animales sean respetados y vivan libres de sufrimiento, abuso y explotacion.</p>
-    </div>
-    <div id="idea">
-        <h1>Motivo</h1>
-            <p>Debido a que la mayoria de anuncios de desaparicion, adopcion y castracion de animales se realizan por medio de publicaciones en redes sociales, buscamos centralizar estas noticias en un medio web donde los usuarios puedan ver diferentes secciones de adopcion, desaparicion e incluso rescate de animales que lo requieran.</p>
-    </div>
-    <div id="valores">
-        <h1>Valores</h1>
-            <p>Compromiso, compasión, transparencia y dedicación a la causa animal.</p>
-    </div>
-    <div id="invitacion">
-        <h1>Te invitamos</h1>
-            <p>Unete a nuestra causa como voluntario, donante o adoptante y ayuda a marcar la diferencia en la vida de un animal. Cada pequeño gesto cuenta.</p>
+<section id="infoPag" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div id="quienes">
+                <h1>¿Quienes Somos?</h1>
+                <p>Somos un grupo de universitarios dedicados y apasionados por el bienestar animal. Nuestra misión es salvar, rehabilitar y encontrar hogares amorosos para animales sin hogar o en situación de riesgo. Creemos firmemente que cada animal merece una segunda oportunidad y un hogar lleno de amor.</p>
+                <p>Desde nuestros inicios, hemos trabajado incansablemente para rescatar animales en situación de abandono, brindándoles el cuidado y la atención médica que necesitan para recuperarse. Además, educamos a la comunidad sobre la importancia del trato humanitario hacia los animales y promovemos la adopción responsable.</p>
+            </div>
+            <div id="enfoque">
+                <h1>Enfoque</h1>
+                <p>Nuestra visión es un futuro donde todos los animales sean respetados y vivan libres de sufrimiento, abuso y explotación. Nos enfocamos en crear un entorno seguro y acogedor para todos los animales bajo nuestro cuidado, garantizando que reciban el amor y la atención que merecen.</p>
+                <p>Trabajamos estrechamente con otras organizaciones y voluntarios para ampliar nuestro alcance y hacer una diferencia significativa en la vida de tantos animales como sea posible. Nuestra red de apoyo nos permite responder rápidamente a situaciones de emergencia y ofrecer soluciones efectivas y compasivas.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div id="idea">
+                <h1>Motivo</h1>
+                <p>Debido a que la mayoría de anuncios de desaparición, adopción y castración de animales se realizan por medio de publicaciones en redes sociales, buscamos centralizar estas noticias en un medio web donde los usuarios puedan ver diferentes secciones de adopción, desaparición e incluso rescate de animales que lo requieran.</p>
+                <p>Este portal web nos permite proporcionar información actualizada y accesible sobre las actividades y eventos relacionados con el bienestar animal. Facilita la conexión entre adoptantes potenciales y animales necesitados, y proporciona una plataforma para reportar y encontrar animales perdidos de manera eficiente.</p>
+            </div>
+            <div id="valores">
+                <h1>Valores</h1>
+                <p>Nuestros valores fundamentales incluyen el compromiso, la compasión, la transparencia y la dedicación a la causa animal. Cada acción que emprendemos está guiada por nuestro profundo amor y respeto por los animales.</p>
+                <p>Creemos en la transparencia en todas nuestras operaciones y en la rendición de cuentas ante nuestros voluntarios, adoptantes y la comunidad en general. Nos esforzamos por mantener altos estándares éticos y operativos en todas nuestras actividades, asegurando que cada animal reciba el mejor cuidado posible.</p>
+            </div>
+        </div>
+        <div id="invitacion">
+                <h1>Te invitamos</h1>
+                <p>Únete a nuestra causa como voluntario, donante o adoptante y ayuda a marcar la diferencia en la vida de un animal. Cada pequeño gesto cuenta y juntos podemos crear un impacto positivo duradero.</p>
+                <p>Ya sea que desees ofrecer tu tiempo, hacer una donación o abrir tu hogar a un animal necesitado, tu apoyo es invaluable para nosotros. Únete a nuestra comunidad de amantes de los animales y sé parte del cambio que queremos ver en el mundo.</p>
+            </div>
     </div>
 </section>
 
 <footer>
-        <div class="footer">
-            <container class="redes">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/800px-Instagram_logo_2022.svg.png" height="100" alt="instagram">
-                <a href="https://www.instagram.com/">Instagram</a>
-            </container>
-            <container class="redes">
-                <img src="https://p16-va-tiktok.ibyteimg.com/obj/musically-maliva-obj/4a2a1776a08f761c6464f596c0c5e8e6.png" height="100" alt="tiktok">
-                <a href="https://www.tiktok.com/login?lang=es&redirect_url=https%3A%2F%2Fwww.tiktok.com%2Fupload%3Flang%3Des">TikTok</a>
-            </container>
-            <container class="redes">
-                <img src="https://store-images.s-microsoft.com/image/apps.8453.13518859748920827.4d7dd838-9f34-4ad2-9cd7-b861c6398fc1.11cbb3d4-ffd9-42c1-82bd-e3f305d562b1" height="100" alt="whatsapp">
-                <a href="https://www.whatsapp.com/?lang=es_LA">WhatsApp</a>
-            </container>
-            <container class="redes">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Logo_de_Facebook.png/220px-Logo_de_Facebook.png" height="100" alt="facebook">
-                <a href="https://www.facebook.com/">Facebook</a>
-            </container>
-            </container>
-        </div>
-    </footer>
+<?php
+        include 'footer.php';
+    ?>
+</footer>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 

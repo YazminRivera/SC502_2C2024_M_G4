@@ -26,7 +26,7 @@
               <p class="card-text text-center mt-3">Edad: </p>    
               <p class="card-text text-center">Ubicación: </p>  
               <div class="text-center">       
-              <button class="btn-Contactar" type="submit">Contactar</button>
+              <button class="btn-Contactar" type="submit">Enviar solicitud de adopción</button>
               </div>
             </div>
           </div>  
@@ -40,7 +40,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button class="btn-Contactar" type="submit">Contactar</button>
+              <button class="btn-Contactar" type="submit">Enviar solicitud de adopción</button>
               </div>
             </div>
           </div>  
@@ -54,7 +54,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button class="btn-Contactar" type="submit">Contactar</button>
+              <button class="btn-Contactar" type="submit">Enviar solicitud de adopción</button>
               </div>
             </div>
           </div>  
@@ -68,7 +68,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button class="btn-Contactar" type="submit">Contactar</button>
+              <button class="btn-Contactar" type="submit">Enviar solicitud de adopción</button>
               </div>
             </div>
           </div>  
@@ -82,7 +82,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button class="btn-Contactar" type="submit">Contactar</button>
+              <button class="btn-Contactar" type="submit">Enviar solicitud de adopción</button>
               </div>
             </div>
           </div>  
@@ -104,7 +104,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button class="btn-Contactar" type="submit">Contactar</button>
+              <button class="btn-Contactar" type="submit">Enviar solicitud de adopción</button>
               </div>
             </div>
           </div>  
@@ -118,7 +118,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button class="btn-Contactar" type="submit">Contactar</button>
+              <button class="btn-Contactar" type="submit">Enviar solicitud de adopción</button>
               </div>
             </div>
           </div>  
@@ -132,7 +132,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button class="btn-Contactar" type="submit">Contactar</button>
+              <button class="btn-Contactar" type="submit">Enviar solicitud de adopción</button>
               </div>
             </div>
           </div>  
@@ -146,7 +146,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button class="btn-Contactar" type="submit">Contactar</button>
+              <button class="btn-Contactar" type="submit">Enviar solicitud de adopción</button>
               </div>
             </div>
           </div>  
@@ -160,7 +160,7 @@
               <p class="card-text text-center mt-3">Edad: </p>
               <p class="card-text text-center">Ubicación: </p>
               <div class="text-center">       
-              <button class="btn-Contactar" type="submit">Contactar</button>
+              <button class="btn-Contactar" type="submit">Enviar solicitud de adopción</button>
               </div>           
             </div>
           </div>  
@@ -172,6 +172,11 @@
         </div>
       </div>      
 </section>
+<footer>
+<?php
+        include 'footer.php';
+    ?>
+</footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
