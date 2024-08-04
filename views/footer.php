@@ -34,7 +34,7 @@
         </div>
         <div class="row mt-4">
             <div class="col text-center">
-                <p>&copy; 2023 Hogar de Adopción y Rescate. Todos los derechos reservados.</p>
+                <p>&copy; 2024 Hogar de Adopción y Rescate. Todos los derechos reservados.</p>
             </div>
         </div>
     </div>
