@@ -1,48 +1,21 @@
-<!--se hace el bloque php desde arriba para que el arreglo exista al bajar al html-->
 <?php
-//arreglo de lugares para agregar informacion de los lugares de castracion
-$lugares = [
-    [
-        'nombre' => 'Campaña 1',
-        'ubi' => 'San Jose',
-        'img' => 'https://www.neurovetcr.com/images/logo/logo%20Neurovet-01.png',
-        'infoLink' => '#'
-    ],
-    [
-        'nombre' => 'Campaña 2',
-        'ubi' => 'Heredia',
-        'img' => 'https://www.neurovetcr.com/images/logo/logo%20Neurovet-01.png',
-        'infoLink' => '#'
-    ],
-    [
-        'nombre' => 'Campaña 3',
-        'ubi' => 'Cartago',
-        'img' => 'https://doctoresrobert.files.wordpress.com/2021/01/cropped-drrobert-01.png',
-        'infoLink' => '#'
-    ],
-    [
-        'nombre' => 'Campaña 4',
-        'ubi' => 'Cartago',
-        'img' => 'https://doctoresrobert.files.wordpress.com/2021/01/cropped-drrobert-01.png',
-        'infoLink' => '#'
-    ],
-];
+// Incluir el modelo de campañas
+require_once '../models/registroCasModel.php';
 
+// Obtener campañas desde la base de datos
+$lugares = registroCasModel::obtenerCampanas();
 
+// Aplicar filtro si se ha buscado algo
 $filtrolugares = $lugares;
 
-//se revisa si hay informacion en el input a base de un GET
+
 if (!empty($_GET['search'])) {
-    $search = strtolower($_GET['search']); //strtolower convierte el string en minusculas aara que no haya problemas en la busqueda con mayusculas
-    $filtrolugares = array_filter($lugares, function ($lugar) use ($search) { //array_filter crea un nuevo arreglo en base a los elementos del arreglo lugares que cumplen con la condicion del callback, use incorpora a seacrh desde el html
-        return strpos(strtolower($lugar['ubi']), $search) !== false; // strpos busca la primera ocurrencia de $search comparando con ubi el cual es el parametro que se usa para filtarr la busqueda, !== false hace que el filtro devuelva un true si el filtro de busqueda esta en la cadena
+    $search = strtolower($_GET['search']); //Convierte la busqueda a minusculas
+    $filtrolugares = array_filter($lugares, function ($lugar) use ($search) {
+        return strpos(strtolower($lugar['ubiCamp']), $search) !== false; //Arreglo que contiene solo los lugares que coinciden con el termino de busqueda (strpos busca la primera coincidencia dentro de lo buscado)
     });
 }
-
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -58,9 +31,7 @@ if (!empty($_GET['search'])) {
 
 <body>
 
-    <?php
-    include 'menu.php';
-    ?>
+    <?php include 'menu.php'; ?>
 
     <div class="container my-4">
         <div class="row">
@@ -68,13 +39,13 @@ if (!empty($_GET['search'])) {
                 <h2 class="mb-3">Filtro de zona</h2>
                 <form>
                     <input type="search" class="form-control mb-4" name="search" placeholder="Buscar por zona"
-                        value="<?= ($_GET['search']) ?? '' ?>">
+                        value="<?= $_GET['search'] ?? '' ?>">
                     <button type="submit" class="btn btn-primary">Buscar</button>
                 </form>
             </div>
             <div class="agregarCas">
                 <form>
-                <a href="registroCas.php" class="btn btn-primary">Registrar Nueva Campaña</a>
+                    <a href="registroCas.php" class="btn btn-primary">Registrar Nueva Campaña</a>
                 </form>
             </div>
         </div>
@@ -82,11 +53,11 @@ if (!empty($_GET['search'])) {
             <?php foreach ($filtrolugares as $lugar): ?>
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="<?= $lugar['img'] ?>" class="card-img-top" alt="Campaña">
+                        <img src="<?= $lugar['imagenCamp'] ?>" class="card-img-top" alt="Campaña">
                         <div class="card-body">
-                            <h5 class="card-title"><?= $lugar['nombre'] ?></h5>
-                            <p class="card-text"><i class="ubicacion"></i> <?= $lugar['ubi'] ?></p>
-                            <a href="<?= $lugar['infoLink'] ?>" class="btn btn-primary">Más Información</a>
+                            <h5 class="card-title"><?= $lugar['nombreCamp'] ?></h5>
+                            <p class="card-text"><i class="ubicacion"></i> <?= $lugar['ubiCamp'] ?></p>
+                            <a href="<?= $lugar['infoLinkCamp'] ?>" class="btn btn-primary">Más Información</a>
                         </div>
                     </div>
                 </div>
@@ -94,11 +65,10 @@ if (!empty($_GET['search'])) {
         </div>
     </div>
     <footer>
-        <?php
-        include 'footer.php';
-        ?>
+        <?php include 'footer.php'; ?>
     </footer>
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>

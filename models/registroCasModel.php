@@ -95,5 +95,25 @@ class registroCasModel extends Conexion
             return json_encode($error);
         }
     }
+
+    public static function obtenerCampanas() {
+        $query = "SELECT nombreCamp, ubiCamp, imagenCamp, infoLinkCamp FROM campcas";
+        $result = [];
+    
+        try {
+            self::getConexion();
+            $stmt = self::$cnx->prepare($query);
+            $stmt->execute();
+            
+            // Fetch all results
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            self::desconectar();
+        } catch (PDOException $ex) {
+            self::desconectar();
+            echo "Error al obtener las campañas: " . $ex->getMessage();
+        }
+    
+        return $result;
+    }
 }
 ?>
