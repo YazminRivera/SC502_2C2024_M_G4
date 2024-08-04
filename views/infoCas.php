@@ -11,7 +11,7 @@ $lugares = [
     [
         'nombre' => 'Campaña 2',
         'ubi' => 'Heredia',
-        'img' => 'https://data506.com/wp-content/uploads/2015/08/veterinaria-la-vete.jpg',
+        'img' => 'https://www.neurovetcr.com/images/logo/logo%20Neurovet-01.png',
         'infoLink' => '#'
     ],
     [
@@ -84,6 +84,11 @@ if (!empty($_GET['search'])) {
             <?php endforeach; ?>
         </div>
     </div>
+    <footer>
+    <?php
+        include 'footer.php';
+    ?>
+</footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>

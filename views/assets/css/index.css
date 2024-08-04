@@ -1,7 +1,6 @@
 /* estilo para body */
 body{
-    background-color: #82ffea;
-
+    background-color: #ffffff;
 }
 
 /*estilo para las imnagenes del carousel*/
@@ -33,10 +32,5 @@ body{
 }
 
 
-/* estilo para el footer*/
-footer{
-    padding-top: 50px;
-    text-align: center;
-    align-items: center;
-    padding-bottom: 25px;
-}
+
+

@@ -1,0 +1,50 @@
+footer {
+    background-color: #35ad99; 
+    color: white; 
+    padding: 40px 0; 
+}
+
+footer h5 {
+    margin-bottom: 20px; 
+    font-weight: bold; 
+}
+
+footer p, footer ul, footer a {
+    color: white; 
+}
+
+footer ul {
+    padding-left: 0; 
+    list-style: none; 
+}
+
+footer ul li {
+    margin-bottom: 10px; 
+}
+
+footer ul li a {
+    text-decoration: none; 
+    color: white; 
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+footer .bi {
+    margin-right: 10px; 
+}
+
+footer .redes img {
+    margin: 0 10px; 
+    transition: transform 0.2s; 
+}
+
+footer .redes img:hover {
+    transform: scale(1.2); 
+}
+
+footer .container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
