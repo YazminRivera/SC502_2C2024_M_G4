@@ -72,6 +72,11 @@ if (!empty($_GET['search'])) {
                     <button type="submit" class="btn btn-primary">Buscar</button>
                 </form>
             </div>
+            <div class="agregarCas">
+                <form>
+                <a href="registroCas.php" class="btn btn-primary">Registrar Nueva Campaña</a>
+                </form>
+            </div>
         </div>
         <div class="row">
             <?php foreach ($filtrolugares as $lugar): ?>
