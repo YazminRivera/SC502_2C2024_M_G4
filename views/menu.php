@@ -12,9 +12,7 @@
       </div>
     </div>
   </div>
-</div>
-<div class="seccion2">
-<nav class="navbar navbar-expand-lg bottom-bar">
+  <nav class="navbar navbar-expand-lg bottom-bar">
   <div class="container-fluid">
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav">
@@ -41,3 +39,4 @@
   </div>
 </nav>
 </div>
+

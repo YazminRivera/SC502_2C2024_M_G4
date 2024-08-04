@@ -2,6 +2,9 @@
 .seccion1 {
   background-color: #35ad99;
   padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 500;
 }
 
 /* Seccion inferior */
