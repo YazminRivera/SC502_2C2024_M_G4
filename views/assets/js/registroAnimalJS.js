@@ -1,9 +1,9 @@
 $(document).ready(function () { 
-    $('#formRegistroCas').on('submit', function (e) { 
+    $('#formRegistroAnimal').on('submit', function (e) { 
         e.preventDefault(); 
-        var formData = new FormData($('#formRegistroCas')[0])
+        var formData = new FormData($('#formRegistroAnimal')[0]);
         $.ajax({ 
-            url: '../controllers/registroCasController.php', 
+            url: '../controllers/animalController.php', 
             type: 'POST', 
             data: formData, 
             contentType: false,

@@ -8,11 +8,10 @@ $lugares = registroCasModel::obtenerCampanas();
 // Aplicar filtro si se ha buscado algo
 $filtrolugares = $lugares;
 
-
 if (!empty($_GET['search'])) {
-    $search = strtolower($_GET['search']); //Convierte la busqueda a minusculas
+    $search = strtolower($_GET['search']); // Convierte la búsqueda a minúsculas
     $filtrolugares = array_filter($lugares, function ($lugar) use ($search) {
-        return strpos(strtolower($lugar['ubiCamp']), $search) !== false; //Arreglo que contiene solo los lugares que coinciden con el termino de busqueda (strpos busca la primera coincidencia dentro de lo buscado)
+        return strpos(strtolower($lugar['ubiCamp']), $search) !== false; // Arreglo que contiene solo los lugares que coinciden con el término de búsqueda (strpos busca la primera coincidencia dentro de lo buscado)
     });
 }
 ?>
@@ -39,7 +38,7 @@ if (!empty($_GET['search'])) {
                 <h2 class="mb-3">Filtro de zona</h2>
                 <form>
                     <input type="search" class="form-control mb-4" name="search" placeholder="Buscar por zona"
-                        value="<?= $_GET['search'] ?? '' ?>">
+                        value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
                     <button type="submit" class="btn btn-primary">Buscar</button>
                 </form>
             </div>
@@ -53,11 +52,13 @@ if (!empty($_GET['search'])) {
             <?php foreach ($filtrolugares as $lugar): ?>
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="<?= $lugar['imagenCamp'] ?>" class="card-img-top" alt="Campaña">
+                        <img src="<?= htmlspecialchars($lugar['imagenCamp']) ?>" class="card-img-top" alt="Campaña">
                         <div class="card-body">
-                            <h5 class="card-title"><?= $lugar['nombreCamp'] ?></h5>
-                            <p class="card-text"><i class="ubicacion"></i> <?= $lugar['ubiCamp'] ?></p>
-                            <a href="<?= $lugar['infoLinkCamp'] ?>" class="btn btn-primary">Más Información</a>
+                            <h5 class="card-title"><?= htmlspecialchars($lugar['nombreCamp']) ?></h5>
+                            <p class="card-text"><i class="ubicacion"></i> <?= htmlspecialchars($lugar['ubiCamp']) ?></p>
+                            <p class="card-text">Fecha de inicio: <?= htmlspecialchars($lugar['fechaInicioCamp']) ?></p> 
+                            <p class="card-text">Fecha de fin: <?= htmlspecialchars($lugar['fechaFinCamp']) ?></p>     
+                            <a href="<?= htmlspecialchars($lugar['infoLinkCamp']) ?>" class="btn btn-primary">Más Información</a>
                         </div>
                     </div>
                 </div>

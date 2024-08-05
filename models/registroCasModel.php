@@ -4,7 +4,6 @@ require_once '../config/Conexion.php';
 
 class registroCasModel extends Conexion
 {
-
     protected static $cnx;
 
     private $id = null;
@@ -12,6 +11,8 @@ class registroCasModel extends Conexion
     private $ubiCamp = null;
     private $imagenCamp = null;
     private $infoLinkCamp = null;
+    private $fechaInicioCamp = null;
+    private $fechaFinCamp = null;
 
     public function getId()
     {
@@ -59,6 +60,25 @@ class registroCasModel extends Conexion
         $this->infoLinkCamp = $infoLinkCamp;
     }
 
+
+    public function getFechaInicioCamp()
+    {
+        return $this->fechaInicioCamp;
+    }
+    public function setFechaInicioCamp($fechaInicioCamp)
+    {
+        $this->fechaInicioCamp = $fechaInicioCamp;
+    }
+
+    public function getFechaFinCamp()
+    {
+        return $this->fechaFinCamp;
+    }
+    public function setFechaFinCamp($fechaFinCamp)
+    {
+        $this->fechaFinCamp = $fechaFinCamp;
+    }
+
     public function __construct()
     {
     }
@@ -75,18 +95,25 @@ class registroCasModel extends Conexion
 
     public function guardar()
     {
-        $query = "INSERT INTO `campcas`(`nombreCamp`, `ubiCamp`, `imagenCamp`, `infoLinkCamp`) VALUES (:nombreCampPDO,:ubiCampPDO,:imagenCampPDO,:infoLinkCampPDO)";
+        $query = "INSERT INTO `sc502campcas`(`nombreCamp`, `ubiCamp`, `imagenCamp`, `infoLinkCamp`, `fechaInicioCamp`, `fechaFinCamp`) 
+                  VALUES (:nombreCampPDO, :ubiCampPDO, :imagenCampPDO, :infoLinkCampPDO, :fechaInicioCampPDO, :fechaFinCampPDO)";
         try {
             self::getConexion();
             $nombreCampP = $this->getNombreCamp();
             $ubiCampP = $this->getUbiCamp();
             $imagenCampP = $this->getImagenCamp();
             $infoLinkCampP = $this->getInfoLinkCamp();
+            $fechaInicioCampP = $this->getFechaInicioCamp();
+            $fechaFinCampP = $this->getFechaFinCamp();
+
             $resultado = self::$cnx->prepare($query);
             $resultado->bindParam(":nombreCampPDO", $nombreCampP, PDO::PARAM_STR);
             $resultado->bindParam(":ubiCampPDO", $ubiCampP, PDO::PARAM_STR);
             $resultado->bindParam(":imagenCampPDO", $imagenCampP, PDO::PARAM_STR);
             $resultado->bindParam(":infoLinkCampPDO", $infoLinkCampP, PDO::PARAM_STR);
+            $resultado->bindParam(":fechaInicioCampPDO", $fechaInicioCampP, PDO::PARAM_STR);
+            $resultado->bindParam(":fechaFinCampPDO", $fechaFinCampP, PDO::PARAM_STR);
+
             $resultado->execute();
             self::desconectar();
         } catch (PDOException $ex) {
@@ -96,24 +123,26 @@ class registroCasModel extends Conexion
         }
     }
 
-    public static function obtenerCampanas() {
-        $query = "SELECT nombreCamp, ubiCamp, imagenCamp, infoLinkCamp FROM campcas";
+    public static function obtenerCampanas()
+    {
+        $query = "SELECT nombreCamp, ubiCamp, imagenCamp, infoLinkCamp, fechaInicioCamp, fechaFinCamp FROM sc502campcas";
         $result = [];
-    
+
         try {
             self::getConexion();
             $stmt = self::$cnx->prepare($query);
             $stmt->execute();
+
             
-            // Fetch all results
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             self::desconectar();
         } catch (PDOException $ex) {
             self::desconectar();
             echo "Error al obtener las campañas: " . $ex->getMessage();
         }
-    
+
         return $result;
     }
 }
+
 ?>
