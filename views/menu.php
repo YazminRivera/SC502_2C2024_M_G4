@@ -24,7 +24,7 @@
             <a class="nav-link" href="verAnimales.php">Animales Registrados</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Encontrados</a>
+            <a class="nav-link" href="encontrados.php">Encontrados</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="desapariciones.php">Desapariciones</a>

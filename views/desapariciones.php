@@ -36,6 +36,7 @@ $desapariciones = DesaparicionModel::obtenerDesapariciones();
                         <img src="<?= $desaparicion['imagenAnm'] ?>" class="card-img-top" alt="Animal">
                         <div class="card-body">
                             <h5 class="card-title"><?= $desaparicion['nombreAnm'] ?></h5>
+                            <p class="card-text"><strong>ID del Animal:</strong> <?= $desaparicion['idAnimal'] ?></p>
                             <p class="card-text"><strong>Tipo:</strong> <?= $desaparicion['tipoAnimal'] ?></p>
                             <p class="card-text"><strong>Edad:</strong> <?= $desaparicion['edadAnm'] ?> años</p>
                             <p class="card-text"><strong>Raza:</strong> <?= $desaparicion['razaAnm'] ?></p>
