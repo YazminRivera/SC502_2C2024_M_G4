@@ -1,5 +1,6 @@
 <?php
 require_once '../models/encontradoModel.php';
+require_once '../models/desaparicionModel.php'; 
 
 $idAnimal = (isset($_POST["idAnimal"])) ? $_POST["idAnimal"] : null;
 $ubiEncontrado = (isset($_POST["ubiEncontrado"])) ? $_POST["ubiEncontrado"] : "";
@@ -14,10 +15,17 @@ $encontrado->setBoolEncontrado($boolEncontrado);
 
 try {
     $encontrado->guardar();
-    $resp = array("exito" => true, "msg" => "Registro de encontrado realizado con éxito en la BD");
+
+    //Actualizar el estado en la tabla de desaparecidos
+    $desaparicion = new DesaparicionModel();
+    $desaparicion->setIdAnimal($idAnimal);
+    $desaparicion->setBoolDesaparecido(0); // Se cambia el boolean a 0 indicando que no esta desaparecido
+    $desaparicion->actualizarEstado();
+
+    $resp = array("exito" => true, "msg" => "Animal registrado como encontrado y actualizado en la base de datos");
     echo json_encode($resp);
 } catch (PDOException $th) {
-    $resp = array("exito" => false, "msg" => "Se presentó un error");
+    $resp = array("exito" => false, "msg" => "Se presentó un error: " . $th->getMessage());
     echo json_encode($resp);
 }
 ?>

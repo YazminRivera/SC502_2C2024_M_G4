@@ -102,13 +102,36 @@ class EncontradoModel extends Conexion
         }
     }
 
-    //se combinan la tabla de animal y encontardo para mostrar datos de las 2
+    //se actuliza el boolean del estado
+    public function actualizarEstado()
+    {
+        $query = "UPDATE `sc502Encontrados` SET `boolEncontrado` = :boolEncontradoPDO WHERE `idAnimal` = :idAnimalPDO";
+        try {
+            self::getConexion();
+            $idAnimalP = $this->getIdAnimal();
+            $boolEncontradoP = $this->getBoolEncontrado();
+
+            $resultado = self::$cnx->prepare($query);
+            $resultado->bindParam(":idAnimalPDO", $idAnimalP, PDO::PARAM_INT);
+            $resultado->bindParam(":boolEncontradoPDO", $boolEncontradoP, PDO::PARAM_BOOL);
+
+            $resultado->execute();
+            self::desconectar();
+        } catch (PDOException $ex) {
+            self::desconectar();
+            echo "Error al actualizar el estado de encontrado: " . $ex->getMessage();
+        }
+    }
+
+    //se hace join de la tabla animal y encontardo para mostrar datos de las 2 y se filtran los desaparecidos
     public static function obtenerEncontrados()
     {
         $query = "SELECT a.idAnimal, a.tipoAnimal, a.nombreAnm, a.edadAnm, a.razaAnm, a.colorPelaje, a.imagenAnm, 
-                         e.idEncontrado, e.ubiEncontrado, e.fechaEncontrado, e.boolEncontrado
-                  FROM sc502animal a
-                  INNER JOIN sc502Encontrados e ON a.idAnimal = e.idAnimal";
+                     e.idEncontrado, e.ubiEncontrado, e.fechaEncontrado, e.boolEncontrado
+              FROM sc502animal a
+              INNER JOIN sc502Encontrados e ON a.idAnimal = e.idAnimal
+              WHERE e.boolEncontrado = 1"; // Solo animales encontrados
+
         $result = [];
 
         try {
@@ -125,5 +148,6 @@ class EncontradoModel extends Conexion
 
         return $result;
     }
+
 }
 ?>

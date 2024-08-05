@@ -102,13 +102,37 @@ class DesaparicionModel extends Conexion
         }
     }
 
-    //se combinan la tabla de animal y desaparicion para mostrar datos de las 2
+    //se actuliza el boolean del estado
+    public function actualizarEstado()
+    {
+        $query = "UPDATE `sc502desapariciones` SET `boolDesaparecido` = :boolDesaparecidoPDO WHERE `idAnimal` = :idAnimalPDO";
+        try {
+            self::getConexion();
+            $idAnimalP = $this->getIdAnimal();
+            $boolDesaparecidoP = $this->getBoolDesaparecido();
+
+            $resultado = self::$cnx->prepare($query);
+            $resultado->bindParam(":idAnimalPDO", $idAnimalP, PDO::PARAM_INT);
+            $resultado->bindParam(":boolDesaparecidoPDO", $boolDesaparecidoP, PDO::PARAM_BOOL);
+
+            $resultado->execute();
+            self::desconectar();
+        } catch (PDOException $ex) {
+            self::desconectar();
+            echo "Error al actualizar el estado de desaparición: " . $ex->getMessage();
+        }
+    }
+
+
+    //se hace join de la tabla animal y desaparicion para mostrar datos de las 2 t filtrar los encontrados
     public static function obtenerDesapariciones()
     {
         $query = "SELECT a.idAnimal, a.tipoAnimal, a.nombreAnm, a.edadAnm, a.razaAnm, a.colorPelaje, a.imagenAnm, 
-                         d.idDesaparicion, d.ubiDesaparicion, d.fechaDesaparicion, d.boolDesaparecido
-                  FROM sc502animal a
-                  INNER JOIN sc502desapariciones d ON a.idAnimal = d.idAnimal";
+                     d.idDesaparicion, d.ubiDesaparicion, d.fechaDesaparicion, d.boolDesaparecido
+              FROM sc502animal a
+              INNER JOIN sc502desapariciones d ON a.idAnimal = d.idAnimal
+              WHERE d.boolDesaparecido = 1"; // Solo animales desaparecidos
+
         $result = [];
 
         try {
