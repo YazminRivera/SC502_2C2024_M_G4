@@ -47,7 +47,7 @@
                         <input type="password" class="form-control text" id="confirmarContraseñaUsuario" name="confirmarContraseña">
                     </div>
                     <div class="col-12 mt-3 boton-end">
-                        <button class="btn-Enviar" type="submit">Enviar</button>
+                        <button class="btn btn-Enviar" type="submit">Enviar</button>
                     </div>
                 </div>
             </div>

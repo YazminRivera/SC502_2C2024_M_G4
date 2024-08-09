@@ -11,7 +11,7 @@ $encontrados = EncontradoModel::obtenerEncontrados();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Animales en Adopción</title>
+    <title>Lista de Animales Encontrados</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/encontrados.css">
@@ -22,10 +22,11 @@ $encontrados = EncontradoModel::obtenerEncontrados();
     <?php include 'menu.php'; 
     ?>
 
-<div class="container my-4">
+    <div class="container my-4">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="mb-3">Lista de Animales en Adopción</h2>                
+                <h2 class="mb-3">Lista de Animales Encontrados</h2>
+                <a href="registroEncontrado.php" class="btn btn-primary mb-4">Registrar Nuevo Encontrado</a>
             </div>
         </div>
         <div class="row">
@@ -40,18 +41,18 @@ $encontrados = EncontradoModel::obtenerEncontrados();
                             <p class="card-text"><strong>Edad:</strong> <?= $encontrado['edadAnm'] ?> años</p>
                             <p class="card-text"><strong>Raza:</strong> <?= $encontrado['razaAnm'] ?></p>
                             <p class="card-text"><strong>Color de Pelaje:</strong> <?= $encontrado['colorPelaje'] ?></p>
-                            <p class="card-text"><strong>Ubicación:</strong> <?= $encontrado['ubiEncontrado'] ?></p>                                                        
-                            <div class="col-12 mt-3 text-center">
-                            <a href="solicitudAdopcion.php?id=<?= $encontrado['idAnimal'] ?>" class="btn btn-primary mb-4">Enviar solicitud de adopción</a>
-
-                            </div>
+                            <p class="card-text"><strong>Ubicación Encontrado:</strong> <?= $encontrado['ubiEncontrado'] ?></p>
+                            <p class="card-text"><strong>Fecha Encontrado:</strong> <?= $encontrado['fechaEncontrado'] ?></p>
+                            <p class="card-text"><strong>Encontrado:</strong> <?= $encontrado['boolEncontrado'] ? 'Sí' : 'No' ?></p>
                         </div>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
-      </div>      
-</section>
+    </div>
+    <footer>
+        <?php include 'footer.php'; ?>
+    </footer>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

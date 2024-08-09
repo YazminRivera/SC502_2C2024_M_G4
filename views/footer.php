@@ -9,10 +9,11 @@
                 <h5>Enlaces Útiles</h5>
                 <ul class="list-unstyled">
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="#">Encontrados</a></li>
+                    <li><a href="verAnimales.php">Animales Registrados</a></li>
+                    <li><a href="encontrados.php">Encontrados</a></li>
                     <li><a href="adopciones.php">Adopciones</a></li>
                     <li><a href="desapariciones.php">Desapariciones</a></li>
-                    <li><a href="infoCas.php">Información Castraciones</a></li>
+                    <li><a href="infoCas.php">Información Campañas</a></li>
                     <li><a href="solicitud_apoyo.php">Solicitar Apoyo</a></li>
                 </ul>
             </div>
@@ -34,7 +35,7 @@
         </div>
         <div class="row mt-4">
             <div class="col text-center">
-                <p>&copy; 2023 Hogar de Adopción y Rescate. Todos los derechos reservados.</p>
+                <p>&copy; 2024 Hogar de Adopción y Rescate. Todos los derechos reservados.</p>
             </div>
         </div>
     </div>
