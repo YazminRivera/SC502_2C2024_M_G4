@@ -2,16 +2,17 @@
 <div class="seccion1">
   <div class="container-fluid">
     <div class="d-flex justify-content-between align-items-center">
-      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/5871/5871586.png" alt="Logo" style="height: 80px;"></a>
+      <div class="d-flex align-items-center">
+        <a href="index.php"><img src="https://cdn-icons-png.flaticon.com/512/5871/5871586.png" alt="Logo" style="height: 80px;"></a>
+        <h1 style="color: white; margin-left: 10px;">Hogar de Adopción y Rescate</h1>
+      </div>
       <div>
-        <a href="#" class="btn btnInicio">Iniciar Sesión</a>
-        <a href="#" class="btn btnRegistro">Registrarse</a>
+        <a href="inicioSesion.php" class="btn btnInicio">Iniciar Sesión</a>
+        <a href="registro.php" class="btn btnRegistro">Registrarse</a>
       </div>
     </div>
   </div>
-</div>
-<div class="seccion2">
-<nav class="navbar navbar-expand-lg bottom-bar">
+  <nav class="navbar navbar-expand-lg bottom-bar">
   <div class="container-fluid">
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav">
@@ -22,19 +23,20 @@
           <a class="nav-link" href="#">Encontrados</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Desapariciones</a>
+          <a class="nav-link" href="desapariciones.php">Desapariciones</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Adopciones</a>
+          <a class="nav-link" href="adopciones.php">Adopciones</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Información Castraciones</a>
+          <a class="nav-link" href="infoCas.php">Información Castraciones</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Solicitar Apoyo</a>
+          <a class="nav-link" href="solicitud_apoyo.php">Solicitar Apoyo</a>
         </li>
       </ul>
     </div>
   </div>
-</div>
 </nav>
+</div>
+
