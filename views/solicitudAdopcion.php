@@ -1,5 +1,5 @@
 <?php
-
+$idAnimal = (isset($_GET['id'])) ? $_GET['id'] : "";
 ?>
 
 <!DOCTYPE html>

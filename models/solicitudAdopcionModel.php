@@ -102,6 +102,35 @@ class solicitudAdopcionModel extends Conexion
         self::$cnx = null;
     }
 
+    //funciones
+    public function guardarSoliAdopcion(){
+        $query = "INSERT INTO `sc502soliadopcion`(`idAnimal`, `idUsuario`, `nombre`, `correo`, `direccion`, `telefono`, `boolSolicitud`) 
+                VALUES (:idAnimalPDO, :idUsuarioPDO, :nombrePDO, :correoPDO, :direccionPDO, :telefonoPDO, :boolSolicitudPDO)";
+        try {
+            self::getConexion();
+            $idAnimalP = $this->getIdAnimal();
+            $idUsuarioP = $this->getIdUsuario();
+            $nombreP = $this->getNombre();
+            $correoP = $this->getCorreo();
+            $direccionP = $this->getDireccion();
+            $telefonoP = $this->getTelefono();
+            $boolSoliP = $this->getBoolSoli();
 
-    
+            $resultado = self::$cnx->prepare($query);
+            $resultado->bindParam(":idAnimalPDO", $idAnimalP, PDO::PARAM_INT);
+            $resultado->bindParam(":idUsuarioPDO", $idUsuarioP, PDO::PARAM_STR);
+            $resultado->bindParam(":nombrePDO", $nombreP, PDO::PARAM_STR);
+            $resultado->bindParam(":correoPDO", $correoP, PDO::PARAM_STR);
+            $resultado->bindParam(":direccionPDO", $direccionP, PDO::PARAM_STR);
+            $resultado->bindParam(":telefonoPDO", $telefonoP, PDO::PARAM_STR);
+            $resultado->bindParam(":boolSolicitudPDO", $boolSoliP, PDO::PARAM_BOOL);
+
+            $resultado->execute();
+            self::desconectar();
+        } catch (PDOException $ex) {
+            self::desconectar();
+            $error = "Error" . $ex->getCode() . ": " . $ex->getMessage();
+            return json_encode($error);
+        }
+    }
 }    
