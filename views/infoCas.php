@@ -43,7 +43,9 @@ if (!empty($_GET['search'])) {
 ?>
 
 
-
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -56,7 +58,17 @@ if (!empty($_GET['search'])) {
 <body>
     <header>
     <?php
-        include 'menu.php';
+        if (!isset($_SESSION['user'])) {
+            // No está autenticado, muestra el menú de invitado
+            include 'menu.php';
+        } else {
+            // Está autenticado, muestra el menú basado en el rol
+            if ($_SESSION['user']['rol'] === 'admin') {
+                include 'menuAdmin.php';
+            } else {
+                include 'menuUser.php';
+            }
+        }
     ?>
     </header>
     <div class="container my-4">

@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +15,17 @@
 <body>
     <header>
     <?php
-        include 'menu.php';
+        if (!isset($_SESSION['user'])) {
+            // No está autenticado, muestra el menú de invitado
+            include 'menu.php';
+        } else {
+            // Está autenticado, muestra el menú basado en el rol
+            if ($_SESSION['user']['rol'] === 'admin') {
+                include 'menuAdmin.php';
+            } else {
+                include 'menuUser.php';
+            }
+        }
     ?>
     </header>
    
