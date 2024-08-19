@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <?php
 // Incluir el modelo de campanas
 require_once '../models/registroCasModel.php';
@@ -30,8 +33,19 @@ if (!empty($_GET['search'])) {
 
 <body>
 
-    <?php include 'menu.php';
-     ?>
+<?php
+    if (!isset($_SESSION['user'])) {
+      // No está autenticado, muestra el menú de invitado
+      include 'menu.php';
+  } else {
+      // Está autenticado, muestra el menú basado en el rol
+      if ($_SESSION['user']['rol'] === 'admin') {
+          include 'menuAdmin.php';
+      } else {
+          include 'menuUser.php';
+      }
+  }
+    ?>
 
     <div class="container my-4">
         <div class="row">
