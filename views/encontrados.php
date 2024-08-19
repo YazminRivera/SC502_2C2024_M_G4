@@ -1,7 +1,3 @@
-
-
-
-
 <?php
 require_once '../models/encontradoModel.php';
 
@@ -23,18 +19,7 @@ $encontrados = EncontradoModel::obtenerEncontrados();
 
 <body>
 
-<?php
-    if (!isset($_SESSION['user'])) {
-      // No está autenticado, muestra el menú de invitado
-      include 'menu.php';
-  } else {
-      // Está autenticado, muestra el menú basado en el rol
-      if ($_SESSION['user']['rol'] === 'admin') {
-          include 'menuAdmin.php';
-      } else {
-          include 'menuUser.php';
-      }
-  }
+    <?php include 'menu.php'; 
     ?>
 
     <div class="container my-4">
