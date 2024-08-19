@@ -1,0 +1,34 @@
+/*estilo del formulario*/
+.container{
+    background-color: #3fcfb7;
+    color: white;
+    padding: 24px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+/*boton de iniciar de sesion*/
+.btnIniciarSesion{
+    background-color: teal;
+    border-color: teal;
+    color: white;
+}
+
+/*boton de inicio de registrar*/
+.btnRegistrar{
+    background-color: teal;
+    border-color: teal;
+    color: white;
+}
+
+/*boton de olvidar contraseña*/
+.btnOlvidar{
+    color:white;
+    border: none;
+}
+
