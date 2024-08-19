@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,8 +13,19 @@
 </head>
 
 <body>
-    <?php
-    include 'menu.php';
+    
+<?php
+    if (!isset($_SESSION['user'])) {
+        // No está autenticado, muestra el menú de invitado
+        include 'menu.php';
+    } else {
+        // Está autenticado, muestra el menú basado en el rol
+        if ($_SESSION['user']['rol'] === 'admin') {
+            include 'menuAdmin.php';
+        } else {
+            include 'menuUser.php';
+        }
+    }
     ?>
     <section class="container registroCas" style="margin-top: 60px;">
         <center><img src="https://cdn-icons-png.flaticon.com/512/5871/5871586.png" alt="Logo" style="height: 80px; margin-top: 15px;"></center>
