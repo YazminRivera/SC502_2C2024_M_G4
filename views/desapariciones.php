@@ -1,14 +1,13 @@
-<?php 
-    session_start();
-?>
 <?php
 require_once '../models/desaparicionModel.php';
 
 // Obtener desapariciones desde la base de datos
 $desapariciones = DesaparicionModel::obtenerDesapariciones();
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,20 +16,10 @@ $desapariciones = DesaparicionModel::obtenerDesapariciones();
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/desapariciones.css">
 </head>
+
 <body>
-<?php
-    if (!isset($_SESSION['user'])) {
-      // No está autenticado, muestra el menú de invitado
-      include 'menu.php';
-  } else {
-      // Está autenticado, muestra el menú basado en el rol
-      if ($_SESSION['user']['rol'] === 'admin') {
-          include 'menuAdmin.php';
-      } else {
-          include 'menuUser.php';
-      }
-  }
-    ?>
+    
+    <?php include 'menu.php';?>
 
     <div class="container my-4">
         <div class="row">
