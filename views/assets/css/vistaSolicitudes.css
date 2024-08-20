@@ -1,0 +1,20 @@
+.recuadro{
+    padding-left: 15rem;
+    background-color: salmon;}
+
+.titulo{
+    padding-top: 15px;
+}
+
+.card{
+    width: 100rem;
+}
+
+.mapa{ 
+    background-color: seagreen;
+    border-radius: 15px;
+    border-color: teal;
+    height: 50px;
+    display: flex;
+    margin-top: 10px;
+}

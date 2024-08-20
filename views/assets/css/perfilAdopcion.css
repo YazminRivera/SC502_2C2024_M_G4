@@ -9,6 +9,11 @@
     height: 700px;
 }
 
+.carousel-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
 /*pfp de la mascota*/
 .pfp{
     align-items: justify;
@@ -59,4 +64,3 @@
 .oculto {
     visibility: hidden;
 }
-
