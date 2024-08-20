@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,32 +13,52 @@
 </head>
 
 <body>
-    <?php
-        include 'menu.php';
+<?php
+        if (!isset($_SESSION['user'])) {
+            // No está autenticado, muestra el menú de invitado
+            include 'menu.php';
+        } else {
+            // Está autenticado, muestra el menú basado en el rol
+            if ($_SESSION['user']['rol'] === 'admin') {
+                include 'menuAdmin.php';
+            } else {
+                include 'menuUser.php';
+            }
+        }
     ?>
     <br><br><br><br><br><br>
-    <div class="container">
-        <img src="https://cdn-icons-png.flaticon.com/512/5871/5871586.png" alt="Logo" style="height: 100px;">
-        <h2> Iniciar <br> Sesión</h2>
-    <div class="container-form">
-            <div class="mb-3">
-            <label for="correo" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="correoInicio" placeholder="name@example.com">
-        </div>
-            <label for="contrasena" class="form-label">Contraseña</label>
-            <input type="password" id="contraInicio" class="form-control" aria-describedby="passwordHelpBlock">
-            <div id="passwordHelpBlock" class="form-text">
-        </div>
-    </div>
-    <button type="button" class="btn btnOlvidar">¿Olvidaste la contraseña?</button>
-    <br>
-    <a class="btn btnIniciarSesion" href="#">Iniciar Sesión</a>
-    <h5> o </h5>
-    <a class="btn btnRegistrar" href="#">Registrarse</a>
-</div>
-    
+    <section>
+        <form action="" method="post" id="formInicioSesion">
+            <div class="container">
+                <img src="https://cdn-icons-png.flaticon.com/512/5871/5871586.png" alt="Logo" style="height: 100px;">
+                <h2> Iniciar <br> Sesión</h2>
+                <div class="container-form">
+                    <div class="mb-3">
+                        <label for="correoInicio" class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" id="correo" placeholder="name@example.com" name="correo">
+                    </div>
+                    <label for="contraInicio" class="form-label">Contraseña</label>
+                    <input type="password" id="contrasena" class="form-control" aria-describedby="passwordHelpBlock" name="contrasena">
+                    <div id="passwordHelpBlock" class="form-text">
+                    </div>
+                </div>
+                <button type="button" class="btn btnOlvidar">¿Olvidaste la contraseña?</button>
+                <br>
+                <button class="btn btnIniciarSesion" type="submit">Iniciar Sesión</button>
+                <h5> o </h5>
+                <a class="btn btnRegistrar" href="./registro.php">Registrarse</a>
+            </div>
+        </form>
+    </section>
 
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="plugins/jquery/jquery.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css" rel="stylesheet">
+<script src="plugins/bootbox/bootbox.min.js"></script>
+<script src="plugins/toastr/toastr.js"></script>
+<script src="./assets/js/inicioSesion.js"></script>
+
 </html>

@@ -4,7 +4,7 @@ $(document).ready(function () {
         e.preventDefault(); 
         var formData = new FormData($('#formSolicitudAdopcion')[0]);
         $.ajax({ 
-            url: '../controllers/animalController.php', 
+            url: '../controllers/solicitudAdopcionController.php', 
             type: 'POST', 
             data: formData, 
             contentType: false,
