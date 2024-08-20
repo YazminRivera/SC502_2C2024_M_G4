@@ -33,7 +33,7 @@ $idAnimal = (isset($_GET['id'])) ? $_GET['id'] : "";
                         <input type="text" class="form-control text" id="correoSoliAdopcion" name="nombre">
                     </div>
                     <div class="mb-3">
-                        <label for="telefonoSoliAdopcion" class="form-label">Telefono</label>
+                        <label for="telefonoSoliAdopcion" class="form-label">Teléfono</label>
                         <input type="text" class="form-control text" id="telefonoSoliAdopcion" name="nombre">
                     </div>
                     <div class="mb-3">
