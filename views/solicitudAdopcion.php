@@ -1,5 +1,5 @@
 <?php
-
+$idAnimal = (isset($_GET['id'])) ? $_GET['id'] : "";
 ?>
 
 <!DOCTYPE html>
@@ -33,12 +33,12 @@
                         <input type="text" class="form-control text" id="correoSoliAdopcion" name="nombre">
                     </div>
                     <div class="mb-3">
-                        <label for="telefonoSoliAdopcion" class="form-label">Telefono</label>
+                        <label for="telefonoSoliAdopcion" class="form-label">Teléfono</label>
                         <input type="text" class="form-control text" id="telefonoSoliAdopcion" name="nombre">
                     </div>
                     <div class="mb-3">
-                        <label for="correoSoliAdopcion" class="form-label">Correo</label>
-                        <input type="text" class="form-control text" id="correoSoliAdopcion" name="nombre">
+                        <label for="direccionSoliAdopcion" class="form-label">Dirección</label>
+                        <input type="text" class="form-control text" id="direccionSoliAdopcion" name="nombre">
                     </div>
                     <div class="col-12 mt-3 boton-end">
                         <button class="btn-Enviar" type="submit">Enviar</button>

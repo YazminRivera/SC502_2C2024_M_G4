@@ -16,6 +16,9 @@ if (!empty($_GET['search'])) {
 }
 ?>
 
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -30,8 +33,19 @@ if (!empty($_GET['search'])) {
 
 <body>
 
-    <?php include 'menu.php';
-     ?>
+<?php
+        if (!isset($_SESSION['user'])) {
+            // No está autenticado, muestra el menú de invitado
+            include 'menu.php';
+        } else {
+            // Está autenticado, muestra el menú basado en el rol
+            if ($_SESSION['user']['rol'] === 'admin') {
+                include 'menuAdmin.php';
+            } else {
+                include 'menuUser.php';
+            }
+        }
+    ?>
 
     <div class="container my-4">
         <div class="row">
@@ -41,11 +55,6 @@ if (!empty($_GET['search'])) {
                     <input type="search" class="form-control mb-4" name="search" placeholder="Buscar por zona"
                         value="<?= $_GET['search'] ?? '' ?>">
                     <button type="submit" class="btn btn-primary">Buscar</button>
-                </form>
-            </div>
-            <div class="agregarCas">
-                <form>
-                    <a href="registroCas.php" class="btn btn-primary">Registrar Nueva Campaña</a>
                 </form>
             </div>
         </div>
