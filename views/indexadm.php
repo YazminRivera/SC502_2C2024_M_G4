@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -57,7 +60,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a href="#" class="d-block">NOMBRE</a>
+          <a href="#" class="d-block"><?php echo $_SESSION['user']['nombre'] . ' ' . $_SESSION['user']['apellidos'];?></a>
         </div>
       </div>
 
@@ -157,12 +160,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <div class="col-lg-6">
             <div class="card">
               <div class="card-header">
-                <h5 class="m-0">Registro de usuario (Yazmin)</h5>
+                <h5 class="m-0">Registro de usuario</h5>
               </div>
               <div class="card-body">
 
-                <p class="card-text">Agregar un nuevo administrador</p>
-                <a href="#" class="btn btn-primary">Link</a>
+                <p class="card-text">Agregar un nuevo usuario</p>
+                <a href="./registroAdmin.php" class="btn btn-primary">Registrar</a>
               </div>
             </div>
 

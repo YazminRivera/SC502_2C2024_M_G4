@@ -33,7 +33,9 @@ $(document).ready(function () {
                 toastr.success(
                   'Usuario registrado correctamente'
                 );
-                window.location.href = './inicioSesion.php';
+                setTimeout(function() {
+                  window.location.href = './inicioSesion.php';
+              }, 1500);
                 break;
               case '2':
                 toastr.error(

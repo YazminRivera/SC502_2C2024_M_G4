@@ -1,7 +1,7 @@
 <?php
 require_once '../config/conexion.php';
 
-class InicioSesionModel {
+class InicioSesionModel extends Conexion{
     protected static $cnx;
     private $correo = null;
     private $contrasena = null;

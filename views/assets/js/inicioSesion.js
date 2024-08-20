@@ -21,7 +21,9 @@ $(document).ready(function () {
               toastr.success(
                 'Se ha ingresado correctamente'
               );
-              window.location.href = './index.php';
+              setTimeout(function() {
+                window.location.href = './index.php';
+            }, 1500);
               break;
             case '2':
               toastr.error(
