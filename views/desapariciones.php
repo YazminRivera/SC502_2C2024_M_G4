@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <?php
 require_once '../models/desaparicionModel.php';
 
@@ -18,9 +21,20 @@ $desapariciones = DesaparicionModel::obtenerDesapariciones();
 </head>
 
 <body>
-
-    <?php include 'menu.php';
-     ?>
+    
+<?php
+    if (!isset($_SESSION['user'])) {
+      // No está autenticado, muestra el menú de invitado
+      include 'menu.php';
+  } else {
+      // Está autenticado, muestra el menú basado en el rol
+      if ($_SESSION['user']['rol'] === 'admin') {
+          include 'menuAdmin.php';
+      } else {
+          include 'menuUser.php';
+      }
+  }
+    ?>
 
     <div class="container my-4">
         <div class="row">
