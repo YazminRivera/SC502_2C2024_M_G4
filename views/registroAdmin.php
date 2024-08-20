@@ -42,7 +42,13 @@
                         <label for="contrasena" class="form-label">Contraseña</label>
                         <input type="password" class="form-control text" id="contrasena" name="contrasena">
                     </div>
-                    
+                    <div class="mb-3">
+                        <select class="form-select" aria-label="Default select example" id="rol" name="rol">
+                            <option selected>Selecciona el rol del usuario</option>
+                            <option value="admin">Administrador</option>
+                            <option value="user">Usuario</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
@@ -56,13 +62,6 @@
                     <div class="mb-3">
                         <label for="confirmarContraseña" class="form-label">Confirmar Contraseña</label>
                         <input type="password" class="form-control text" id="confirmarContrasena" name="confirmarContraseña">
-                    </div>
-                    <div class="mb-3">
-                        <select class="form-select" aria-label="Default select example" id="rol" name="rol">
-                            <option selected>Selecciona el rol del usuario</option>
-                            <option value="admin">Administrador</option>
-                            <option value="user">Usuario</option>
-                        </select>
                     </div>
                     <div class="col-12 mt-3 boton-end">
                         <button class="btn-Enviar" type="submit">Registrarse</button>
