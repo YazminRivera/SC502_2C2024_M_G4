@@ -1,5 +1,6 @@
 #map {
-  height: 130px;
+  height: 200px;
+  border-radius: 10px;
 }
 .custom-map-control-button {
   background-color: #fff;

@@ -171,12 +171,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <div class="card card-primary card-outline">
               <div class="card-header">
-                <h5 class="m-0">Agregar funcionalidad sussy/nigel</h5>
+                <h5 class="m-0">Solicitudes de apoyo</h5>
               </div>
               <div class="card-body">
 
-                <p class="card-text">Agregar funcionalidad sussy/nigel</p>
-                <a href="#" class="btn btn-primary">Link</a>
+                <p class="card-text">Revision de solicitudes de apoyo</p>
+                <a href="./listarSolicitudes.php" class="btn btn-primary">Ver solicitudes de apoyo</a>
               </div>
             </div>
           </div>

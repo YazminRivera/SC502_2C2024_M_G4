@@ -1,5 +1,5 @@
-<?php 
-    session_start();
+<?php
+session_start();
 ?>
 <?php
 require_once '../models/encontradoModel.php';
@@ -20,7 +20,7 @@ $encontrados = EncontradoModel::obtenerEncontrados();
 </head>
 
 <body>
-<?php
+    <?php
     if (!isset($_SESSION['user'])) {
         // No está autenticado, muestra el menú de invitado
         include 'menu.php';
@@ -32,12 +32,12 @@ $encontrados = EncontradoModel::obtenerEncontrados();
             include 'menuUser.php';
         }
     }
-?>
+    ?>
     <br>
-<div class="container my-4">
+    <div class="container my-4">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="mb-3">Lista de Animales en Adopción</h2>                
+                <h2 class="mb-3">Lista de Animales en Adopción</h2>
             </div>
         </div>
         <div class="row">
@@ -52,18 +52,19 @@ $encontrados = EncontradoModel::obtenerEncontrados();
                             <p class="card-text"><strong>Edad:</strong> <?= $encontrado['edadAnm'] ?> años</p>
                             <p class="card-text"><strong>Raza:</strong> <?= $encontrado['razaAnm'] ?></p>
                             <p class="card-text"><strong>Color de Pelaje:</strong> <?= $encontrado['colorPelaje'] ?></p>
-                            <p class="card-text"><strong>Ubicación:</strong> <?= $encontrado['ubiEncontrado'] ?></p>                                                        
+                            <p class="card-text"><strong>Ubicación:</strong> <?= $encontrado['ubiEncontrado'] ?></p>
                             <div class="col-12 mt-3 text-center">
-                            <a href="solicitudAdopcion.php?id=<?= $encontrado['idAnimal'] ?>" class="btn btn-primary mb-4">Enviar solicitud de adopción</a>
-
+                                <a href="solicitudAdopcion.php?id=<?= $encontrado['idAnimal'] ?>" class="btn btn-primary mb-4">Enviar solicitud de adopción</a>
+                                <br>
+                                <a href="perfilAdopcion.php?id=<?= $encontrado['idAnimal'] ?>" class="btn btn-primary mb-4">Perfil de adopcion</a>
                             </div>
                         </div>
                     </div>
                 </div>
             <?php endforeach; ?>
         </div>
-      </div>      
-</section>
+    </div>
+    </section>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

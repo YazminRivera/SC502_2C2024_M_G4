@@ -14,8 +14,8 @@ if (isset($_GET['id'])) {
 }
 ?>
 
-<?php 
-    session_start();
+<?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,21 +29,20 @@ if (isset($_GET['id'])) {
 </head>
 
 <body>
-    
+
+
     <?php
-     include 'menu.php'; 
-<?php
-        if (!isset($_SESSION['user'])) {
-            // No está autenticado, muestra el menú de invitado
-            include 'menu.php';
+    if (!isset($_SESSION['user'])) {
+        // No está autenticado, muestra el menú de invitado
+        include 'menu.php';
+    } else {
+        // Está autenticado, muestra el menú basado en el rol
+        if ($_SESSION['user']['rol'] === 'admin') {
+            include 'menuAdmin.php';
         } else {
-            // Está autenticado, muestra el menú basado en el rol
-            if ($_SESSION['user']['rol'] === 'admin') {
-                include 'menuAdmin.php';
-            } else {
-                include 'menuUser.php';
-            }
+            include 'menuUser.php';
         }
+    }
     ?>
 
     <br><br><br>
@@ -62,17 +61,6 @@ if (isset($_GET['id'])) {
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Siguiente</span>
                     </button>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-4">
-                        <img id="img1" class="img-thumbnail small-img w-100" alt="Imagen 1">
-                    </div>
-                    <div class="col-4">
-                        <img id="img2" class="img-thumbnail small-img w-100" alt="Imagen 2">
-                    </div>
-                    <div class="col-4">
-                        <img id="img3" class="img-thumbnail small-img w-100" alt="Imagen 3">
-                    </div>
                 </div>
             </div>
             <div class="container">
@@ -131,7 +119,7 @@ if (isset($_GET['id'])) {
                 <div class="container mt-4">
                     <div class="ubi-container">
                         <label>Ubicación</label>
-                        <div class="mapa"></div> <!--placeholder para la api-->
+                        <div id="map" class="mapa"></div> <!--placeholder para la api-->
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mt-4">
@@ -142,6 +130,7 @@ if (isset($_GET['id'])) {
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBALApSS5sNNjhDPjzluVpF9U2ndzCZ2TA" async defer onload="initMap()"></script>
     <script src="./assets/js/perfilAdopcion.js"></script>
 </body>
 

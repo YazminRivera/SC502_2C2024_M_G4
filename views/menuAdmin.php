@@ -38,6 +38,9 @@
         <li class="nav-item">
           <a class="nav-link" href="solicitud_apoyo.php">Solicitar Apoyo</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="listarSolicitudes.php">Solicitudes Apoyo</a>
+        </li>
       </ul>
     </div>
   </div>

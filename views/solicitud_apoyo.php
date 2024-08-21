@@ -1,5 +1,5 @@
-<?php 
-    session_start();
+<?php
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,17 +15,17 @@
 
 <body>
     <?php
-        if (!isset($_SESSION['user'])) {
-            // No está autenticado, muestra el menú de invitado
-            include 'menu.php';
+    if (!isset($_SESSION['user'])) {
+        // No está autenticado, muestra el menú de invitado
+        include 'menu.php';
+    } else {
+        // Está autenticado, muestra el menú basado en el rol
+        if ($_SESSION['user']['rol'] === 'admin') {
+            include 'menuAdmin.php';
         } else {
-            // Está autenticado, muestra el menú basado en el rol
-            if ($_SESSION['user']['rol'] === 'admin') {
-                include 'menuAdmin.php';
-            } else {
-                include 'menuUser.php';
-            }
+            include 'menuUser.php';
         }
+    }
     ?>
     <section class="container solicitudApoyo" style="margin-top: 60px;">
         <center><img src="https://cdn-icons-png.flaticon.com/512/5871/5871586.png" alt="Logo" style="height: 80px; margin-top: 15px;"></center>
@@ -35,12 +35,12 @@
                 <div class="col-6">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control text" id="nombre" name="nombre" 
-                        value="<?php if (!isset($_SESSION['user'])) {
-                            echo '';
-                        } else {
-                            echo $_SESSION['user']['nombre'];
-                        }?>" readonly>
+                        <input type="text" class="form-control text" id="nombre" name="nombre"
+                            value="<?php if (!isset($_SESSION['user'])) {
+                                        echo '';
+                                    } else {
+                                        echo $_SESSION['user']['nombre'];
+                                    } ?>" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="detalleRescate" class="form-label">Detalle del Rescate</label>
@@ -49,31 +49,31 @@
                     <div class="mb-3">
                         <label for="correo" class="form-label">Correo</label>
                         <input type="text" class="form-control text" id="correo" name="correo"
-                        value="<?php if (!isset($_SESSION['user'])) {
-                            echo '';
-                        } else {
-                            echo $_SESSION['user']['correo'];
-                        }?>" readonly>
+                            value="<?php if (!isset($_SESSION['user'])) {
+                                        echo '';
+                                    } else {
+                                        echo $_SESSION['user']['correo'];
+                                    } ?>" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="telefono" class="form-label">Telefono</label>
                         <input type="text" class="form-control text" id="telefono" name="telefono"
-                        value="<?php if (!isset($_SESSION['user'])) {
-                            echo '';
-                        } else {
-                            echo $_SESSION['user']['telefono'];
-                        }?>" readonly>
+                            value="<?php if (!isset($_SESSION['user'])) {
+                                        echo '';
+                                    } else {
+                                        echo $_SESSION['user']['telefono'];
+                                    } ?>" readonly>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="mb-3">
                         <label for="apellidos" class="form-label">Apellidos</label>
                         <input type="text" class="form-control text" id="apellidos" name="apellidos"
-                        value="<?php if (!isset($_SESSION['user'])) {
-                            echo '';
-                        } else {
-                            echo $_SESSION['user']['apellidos'];
-                        }?>" readonly>
+                            value="<?php if (!isset($_SESSION['user'])) {
+                                        echo '';
+                                    } else {
+                                        echo $_SESSION['user']['apellidos'];
+                                    } ?>" readonly>
                     </div>
                     <div class="mb-3">
                         <label for="detalleAnimal" class="form-label">Detalle del Animal</label>
@@ -83,7 +83,8 @@
                         <label for="Ubicación" class="form-label">Ubicación</label>
                         <div id="map" class="mapa"></div>
                     </div>
-                    <input type="hidden" id="idUsuario" name="idUsuario" value="<?php echo $_SESSION['user']['idUsuario']?>">
+                    <input type="hidden" id="latitud" name="latitud" value="0">
+                    <input type="hidden" id="longitud" name="longitud" value="0">
                     <div class="col-12 mt-3 boton-end">
                         <button class="btn-Enviar" type="submit">Enviar</button>
                     </div>
