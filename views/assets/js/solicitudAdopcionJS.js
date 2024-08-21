@@ -1,5 +1,4 @@
 $(document).ready(function () { 
-    
     $('#formSolicitudAdopcion').on('submit', function (e) { 
         e.preventDefault(); 
         var formData = new FormData($('#formSolicitudAdopcion')[0]);

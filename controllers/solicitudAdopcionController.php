@@ -1,6 +1,10 @@
 <?php
 require_once '../models/solicitudAdopcionModel.php';
 
+session_start();
+
+if(isset($_SESSION['user'])){
+$idUsuario = $_SESSION["user"]["idUsuario"];
 $idAnimal = (isset($_POST["idAnimal"])) ? $_POST["idAnimal"] : "";
 $nombreSoliAdopcion = (isset($_POST["nombreSoliAdopcion"])) ? $_POST["nombreSoliAdopcion"] : "";
 $correoSoliAdopcion = (isset($_POST["correoSoliAdopcion"])) ? $_POST["correoSoliAdopcion"] : "";
@@ -10,6 +14,7 @@ $booleanSoliAdopcion = (isset($_POST["booleanSoliAdopcion"])) ? 1 : 0;
 
 $solicitud = new solicitudAdopcionModel();
 $solicitud-> setIdAnimal($idAnimal);
+$solicitud-> setIdUsuario($idUsuario);
 $solicitud-> setNombre($nombreSoliAdopcion); 
 $solicitud-> setCorreo($correoSoliAdopcion); 
 $solicitud-> setTelefono($telefonoSoliAdopcion); 
@@ -22,6 +27,10 @@ try {
     echo json_encode($resp);
 } catch (PDOException $th) {
     $resp = array("exito" => false, "msg" => "Se presentó un error");
+    echo json_encode($resp);
+}
+} else{
+    $resp = array("exito" => false, "msg" => "No está logueado");
     echo json_encode($resp);
 }
 
