@@ -30,7 +30,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index.php" class="nav-link">Página Principal</a>
+        <a href="indexadm.php" class="nav-link">Página Principal</a>
       </li>
     </ul>
 
@@ -109,7 +109,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard Administrador</h1>
+            <h1 class="m-0">Solicitudes de adopcion</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
   
@@ -123,62 +123,36 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Animales registrados</h5>
-                <p class="card-text">
-                  Ver los animales registrados en la pagina y poder registrar un animal nuevo.
-                </p>
-
-                <a href="verAnimales.php" class="card-link">Ver animales Registrados</a>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Campañas</h5>
-                <p class="card-text">
-                  Ver las registrados en la pagina y poder registrar un animal nuevo.
-                </p>
-
-                <a href="infoCasAdm.php" class="card-link">Ver campañas Registrados</a>
-              </div>
-            </div>
-
-            <div class="card card-primary card-outline">
-              <div class="card-body">
-                <h5 class="card-title">Solicitudes de Adopcion</h5>
-
-                <p class="card-text">
-                    Visualización de las solicitudes de adopcion
-                </p>
-                <a href="infoSoliAdopcion.php" class="card-link">Ver las solicitudes de adopción</a>
-              </div>
-            </div><!-- /.card -->
-          </div>
-          <!-- /.col-md-6 -->
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="m-0">Registro de usuario</h5>
-              </div>
-              <div class="card-body">
-
-                <p class="card-text">Agregar un nuevo usuario</p>
-                <a href="./registroAdmin.php" class="btn btn-primary">Registrar</a>
-              </div>
-            </div>
-
-            <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h5 class="m-0">Agregar funcionalidad sussy/nigel</h5>
-              </div>
-              <div class="card-body">
-
-                <p class="card-text">Agregar funcionalidad sussy/nigel</p>
-                <a href="#" class="btn btn-primary">Link</a>
-              </div>
-            </div>
+          <div class="col-lg-10">
+            
+          <!-- Se agrega el table-->
+          <table id="tbllistado"
+                class="table table-striped table-bordered table-hover">
+                <thead>
+                    <th>Id soli adopción</th>                                    
+                    <th>Id animal</th>                                    
+                    <th>Id usuario</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Direccion</th>
+                    <th>Teléfono</th>
+                </thead>
+                <tbody>
+                </tbody>
+                <tfooter>
+                  <th>Id soli adopción</th>                                    
+                    <th>Id animal</th>                                    
+                    <th>Id usuario</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Direccion</th>
+                    <th>Teléfono</th>
+                </tfooter>
+            </table>   
+          
+              
+              
+            
           </div>
           <!-- /.col-md-6 -->
         </div>
@@ -214,10 +188,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="./plugins/jquery/jquery.min.js"></script>
+<!-- Datatable -->
+<script src="./plugins/DataTables/datatables.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+<script src="./assets/js/infoSoliAdopcion.js"></script>
 </body>
 </html>
