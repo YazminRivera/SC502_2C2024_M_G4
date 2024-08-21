@@ -112,5 +112,57 @@
             }   
         }
 
+        public function listarSolicitudes() 
+    {
+        $query = "SELECT * FROM `sc502solicitudesapoyo`";
+        try {
+            self::getConexion();
+            $solicitudes = self::$cnx->prepare($query);
+            $solicitudes->execute();
+            return $solicitudes->fetchAll(PDO::FETCH_ASSOC); 
+        } catch (PDOException $Exception) {
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            return $error;
+        } finally {
+            self::desconectar();
+        }
+    }
+
+    public function obtenerSolicitudById($id)
+    {
+        $query = "SELECT * FROM `sc502solicitudesapoyo` WHERE `idSolicitud` = :id";
+        try {
+            self::getConexion();
+            $solicitud = self::$cnx->prepare($query);
+            $solicitud->bindParam(":id", $id);
+            $solicitud->execute();
+            return $solicitud->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $Exception) {
+            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+            return $error;
+        } finally {
+            self::desconectar();
+        }
+    }
+
+    public function actualizarEstadoSolicitud($id, $nuevoEstado)
+{
+    $query = "UPDATE `sc502solicitudesapoyo` SET `estado` = :estadoPDO WHERE `idSolicitud` = :idPDO";
+    try {
+        self::getConexion();
+        $stmt = self::$cnx->prepare($query);
+        $stmt->bindParam(":estadoPDO", $nuevoEstado);
+        $stmt->bindParam(":idPDO", $id);
+
+        $resultado = $stmt->execute();
+        self::desconectar();
+        return $resultado;
+    } catch (PDOException $Exception) {
+        self::desconectar();
+        $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+        return false;
+    }
+}
+
     }
 ?>

@@ -56,7 +56,8 @@ $encontrados = EncontradoModel::obtenerEncontrados();
                             <div class="col-12 mt-3 text-center">
                                                             
                             <a href="solicitudAdopcion.php" class="btn btn-primary mb-4">Enviar solicitud de adopción</a>
-
+                            <br>
+                            <a href="perfilAdopcion.php?id=<?= $encontrado['idAnimal'] ?>" class="btn btn-primary mb-4">Perfil de adopcion</a>
                             </div>
                         </div>
                     </div>

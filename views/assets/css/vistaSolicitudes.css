@@ -1,0 +1,38 @@
+.recuadro {
+    background-color: #3fcfb7;
+    color: white;
+    padding: 24px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto; /* Centra horizontalmente */
+    display: flex;
+    flex-direction: column; /* Para que el contenido se apile verticalmente */
+    align-items: center; 
+}
+
+.titulo {
+    padding-top: 15px;
+}
+
+.card {
+    width: 60rem;
+    margin-bottom: 20px; /* Espacio entre tarjetas */
+    flex: 1 1 calc(33.333% - 1rem); /* Ajusta el ancho de las tarjetas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mapa { 
+    background-color: seagreen;
+    border-radius: 15px;
+    border-color: teal;
+    height: 200px; /* Ajustar la altura según el tamaño del mapa */
+    display: flex;
+    margin-top: 10px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
