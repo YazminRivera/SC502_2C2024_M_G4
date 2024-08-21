@@ -83,7 +83,13 @@
                         <label for="Ubicación" class="form-label">Ubicación</label>
                         <div id="map" class="mapa"></div>
                     </div>
-                    <input type="hidden" id="idUsuario" name="idUsuario" value="<?php echo $_SESSION['user']['idUsuario']?>">
+                    <input type="hidden" id="idUsuario" name="idUsuario" 
+                    value="<?php if (!isset($_SESSION['user'])) {
+                            echo '';
+                        } else {
+                            echo $_SESSION['user']['idUsuario'];
+                        }?>">
+                        <input type="hidden" name="estado" id="estado" value="1">
                     <div class="col-12 mt-3 boton-end">
                         <button class="btn-Enviar" type="submit">Enviar</button>
                     </div>
