@@ -1,21 +1,19 @@
 let userLatitude;
 let userLongitude;
-
-function obtenerUbicacionUsuario(map, marker) {
+function obtenerUbicacionUsuario(map, marker,) {
   if (navigator.geolocation) {
     navigator.geolocation.watchPosition(
       ({ coords: { latitude, longitude } }) => {
-        const coords = { lat: latitude, lng: longitude };
+        const coords = {
+          lat: latitude,
+          lng: longitude,
+        };
         userLatitude = latitude;
         userLongitude = longitude;
 
-        marker.setPosition(coords);
         map.setCenter(coords);
         map.setZoom(8);
-
-        // Actualiza los campos ocultos con las coordenadas del usuario
-        document.getElementById("latitud").value = userLatitude;
-        document.getElementById("longitud").value = userLongitude;
+        marker.setPosition(coords);
       },
       (error) => {
         console.error("Error al obtener la ubicación:", error);
@@ -47,27 +45,15 @@ function obtenerUbicacionUsuario(map, marker) {
 }
 
 function initMap() {
-  const initialCoords = { lat: -33.61, lng: -63.61 }; // Coordenadas iniciales
+  const argCoords = { lat: -33.61, lng: 63.61 };
   const mapElement = document.getElementById("map");
   const map = new google.maps.Map(mapElement, {
-    center: initialCoords,
+    center: argCoords,
     zoom: 6,
   });
   const marker = new google.maps.Marker({
-    position: initialCoords,
+    position: argCoords,
     map: map,
-    draggable: true, // Permite mover el marcador
-  });
-
-  // Configura el evento de 'dragend' para actualizar las coordenadas
-  marker.addListener('dragend', (event) => {
-    const coords = { lat: event.latLng.lat(), lng: event.latLng.lng() };
-    userLatitude = coords.lat;
-    userLongitude = coords.lng;
-
-    // Actualiza los campos ocultos con las coordenadas nuevas
-    document.getElementById("latitud").value = userLatitude;
-    document.getElementById("longitud").value = userLongitude;
   });
 
   window.addEventListener("load", () => {
@@ -75,16 +61,17 @@ function initMap() {
   });
 }
 
+
+
 $(document).ready(function () {
   $("#formSolicitudApoyo").on("submit", function (e) {
     e.preventDefault();
-
-    var nombre = $("#nombre").val();
-    var apellidos = $("#apellidos").val();
-    var correo = $("#correo").val();
-    var telefono = $("#telefono").val();
-    var detalleRescate = $("#detalleRescate").val();
-    var detalleAnimal = $("#detalleAnimal").val();
+    var nombre = document.querySelector("#nombre").value;
+    var apellidos = document.querySelector("#apellidos").value;
+    var correo = document.querySelector("#correo").value;
+    var telefono = document.querySelector("#telefono").value;
+    var detalleRescate = document.querySelector("#detalleRescate").value;
+    var detalleAnimal = document.querySelector("#detalleAnimal").value;
 
     if (
       nombre === "" ||
@@ -96,34 +83,24 @@ $(document).ready(function () {
     ) {
       toastr.error("Hay uno o más campos incompletos");
     } else {
-      // Asegúrate de que userLatitude y userLongitude estén definidos
-      var latitud = userLatitude !== undefined ? userLatitude : "0";
-      var longitud = userLongitude !== undefined ? userLongitude : "0";
-
-      let formData = new FormData();
-      formData.append("nombre", nombre);
-      formData.append("apellidos", apellidos);
-      formData.append("correo", correo);
-      formData.append("telefono", telefono);
-      formData.append("detalleRescate", detalleRescate);
-      formData.append("detalleAnimal", detalleAnimal);
-      formData.append("latitud", latitud);
-      formData.append("longitud", longitud);
-
+      var formData = new FormData($("#formSolicitudApoyo")[0]);
+      formData.append("ubicacion", userLatitude + ", "+userLongitude);
       $.ajax({
         url: "../controllers/solicitudApoyoController.php",
         type: "POST",
         data: formData,
         contentType: false,
         processData: false,
-        success: function () {
-          toastr.success("Solicitud de apoyo ingresada");
-          $("#formSolicitudApoyo")[0].reset();
+        success: function (datos) {
+          toastr.success("Solicitud de apoyo ingresado");
+          setTimeout(function() {
+            window.location.href = "./index.php";
+        }, 1600);
         },
-        error: function () {
+        error: function (datos) {
           toastr.error("No se ha logrado ingresar la solicitud de apoyo");
         },
       });
-    }
-  });
+    }
+  });
 });

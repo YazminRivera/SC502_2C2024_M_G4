@@ -1,151 +1,118 @@
-<?php
-require_once '../config/Conexion.php';
+<?php 
+    require_once '../config/Conexion.php';
+    class SolicitudApoyoModel extends Conexion{
+        protected static $cnx;
+        private $idApoyo; 
+        private $idUsuario; 
+        private $detalleRescate; 
+        private $detalleAnimal; 
+        private $ubicacion; 
+        private $nombre; 
+        private $apellido; 
+        private $correo; 
+        private $telefono; 
+        private $estado; 
 
-class SolicitudApoyoModel extends Conexion
-{
-    protected static $cnx;
-    private $idSolicitud;
-    private $nombre;
-    private $apellidos;
-    private $correo;
-    private $telefono;
-    private $detalleRescate;
-    private $detalleAnimal;
-    private $estado;
-    private $userLatitude;
-    private $userLongitude;
+        public function getIdApoyo(){
+            return $this->idApoyo;
+        }
+        public function getIdUsuario(){
+            return $this->idUsuario;
+        }
+        public function getDetalleRescate(){
+            return $this->detalleRescate;
+        }
+        public function getDetalleAnimal(){
+            return $this->detalleAnimal;
+        }
+        public function getubicacion(){
+            return $this->ubicacion;
+        }
+        public function getNombre(){
+            return $this->nombre;
+        }
+        public function getApellidos(){
+            return $this->apellido;
+        }
+        public function getCorreo(){
+            return $this->correo;
+        }
+        public function getTelefono(){
+            return $this->telefono;
+        }
+        public function getEstado(){
+            return $this->estado;
+        }
+        public function setIdApoyo($idApoyo) {
+            $this->idApoyo = $idApoyo;
+        }
+        public function setIdUsuario($idUsuario) {
+            $this->idUsuario = $idUsuario;
+        }
+        public function setDetalleRescate($detalleRescate) {
+            $this->detalleRescate = $detalleRescate;
+        }
+        public function setDetalleAnimal($detalleAnimal) {
+            $this->detalleAnimal = $detalleAnimal;
+        }
+        public function setUbicacion($ubicacion){
+            $this->ubicacion = $ubicacion;
+        }
+        public function setNombre($nombre){
+            $this->nombre = $nombre;
+        }
+        public function setApellidos($apellido){
+            $this->apellido = $apellido;
+        }
+        public function setCorreo($correo){
+            $this->correo = $correo;
+        }
+        public function setTelefono($telefono){
+            $this->telefono = $telefono;
+        }
+        public function setEstado($estado){
+            $this->estado = $estado;
+        }
 
-    // Métodos getter y setter
-    public function getIdSolicitud()
-    {
-        return $this->idSolicitud;
-    }
-    public function getNombre()
-    {
-        return $this->nombre;
-    }
-    public function getApellidos()
-    {
-        return $this->apellidos;
-    }
-    public function getCorreo()
-    {
-        return $this->correo;
-    }
-    public function getTelefono()
-    {
-        return $this->telefono;
-    }
-    public function getDetalleRescate()
-    {
-        return $this->detalleRescate;
-    }
-    public function getDetalleAnimal()
-    {
-        return $this->detalleAnimal;
-    }
-    public function getEstado()
-    {
-        return $this->estado;
-    }
-    public function getUserLatitude()
-    {
-        return $this->userLatitude;
-    }
-    public function getUserLongitude()
-    {
-        return $this->userLongitude;
-    }
+        public static function getConexion(){
+            self::$cnx = conexion::conectar();
+        }
+
+        public static function desconectar(){
+            self::$cnx = null;
+        }
     
-    public function setIdSolicitud($idSolicitud)
-    {
-        $this->idSolicitud = $idSolicitud;
-    }
+        public function solicitudApoyo(){
+            $query = "INSERT INTO sc502solicitudesapoyo(nombre, apellido, detalles_rescate, detalles_animal, correo, telefono, ubicacion, estado) VALUES (:nombrePDO,:apellidoPDO,:detalleRescatePDO,:detalleAnimalPDO,:correoPDO,:telefonoPDO,:ubicacionPDO,:estadoPDO)";
+            try{
+                self::getConexion();
+                $nombre = $this ->getNombre(); 
+                $apellido = $this ->getApellidos();
+                $detalleRescate = $this -> getDetalleRescate(); 
+                $detalleAnimal = $this -> getDetalleAnimal(); 
+                $correo =  $this -> getCorreo(); 
+                $telefono =  $this -> getTelefono(); 
+                $ubicacion = $this -> getubicacion();  
+                $estado =  $this -> getEstado(); 
+                $solicitud = self::$cnx->prepare($query);
+                $solicitud->bindParam(":nombrePDO", $nombre, PDO::PARAM_STR);
+                $solicitud->bindParam(":apellidoPDO", $apellido, PDO::PARAM_STR);
+                $solicitud->bindParam(":detalleRescatePDO", $detalleRescate, PDO::PARAM_STR);
+                $solicitud->bindParam(":detalleAnimalPDO", $detalleAnimal, PDO::PARAM_STR);
+                $solicitud->bindParam(":correoPDO", $correo, PDO::PARAM_STR);
+                $solicitud->bindParam(":telefonoPDO", $telefono, PDO::PARAM_STR);
+                $solicitud->bindParam(":ubicacionPDO", $ubicacion, PDO::PARAM_STR);
+                $solicitud->bindParam(":estadoPDO", $estado, PDO::PARAM_INT);
+                $solicitud->execute();
+                self::desconectar();
+            }catch (PDOException $Exception){
+                self::desconectar();
+                $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
+                return $error;
+            }   
+        }
 
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-    }
-    public function setApellidos($apellidos)
-    {
-        $this->apellidos = $apellidos;
-    }
-    public function setCorreo($correo)
-    {
-        $this->correo = $correo;
-    }
-    public function setTelefono($telefono)
-    {
-        $this->telefono = $telefono;
-    }
-    public function setDetalleRescate($detalleRescate)
-    {
-        $this->detalleRescate = $detalleRescate;
-    }
-    public function setDetalleAnimal($detalleAnimal)
-    {
-        $this->detalleAnimal = $detalleAnimal;
-    }
-    public function setEstado($estado)
-    {
-        $this->estado = $estado;
-    }
-    public function setUserLatitude($userLatitude)
-    {
-        $this->userLatitude = $userLatitude;
-    }
-    public function setUserLongitude($userLongitude)
-    {
-        $this->userLongitude = $userLongitude;
-    }
-
-    // constructor
-    public function __construct()
-    {
-        parent::__construct();
-    }
-
-    // Métodos de conexión
-    private static function getConexion()
-    {
-        if (!self::$cnx) {
-            self::$cnx = Conexion::conectar();
-        }
-        return self::$cnx;
-    }
-
-    private static function desconectar()
-    {
-        self::$cnx = null;
-    }
-
-    public function solicitudApoyo()
-    {
-        $this->estado = 1; // 1 representa "pendiente"
-
-        // (idSolicitud, nombre, apellido, detalles_rescate, detalles_animal, correo, telefono, ubicacion)
-        $query = "INSERT INTO `sc502solicitudesapoyo`(`nombre`, `apellido`, `detalles_rescate`, `detalles_animal`, `correo`, `telefono`, `estado` ,`ubicacion`) VALUES (:nombrePDO, :apellidoPDO, :detallesRescatePDO, :detallesAnimalPDO, :correoPDO, :telefonoPDO, :estadoPDO, :ubicacionPDO)";
-        try {
-            self::getConexion();
-            $ubicacion = $this->userLatitude . ", " . $this->userLongitude;
-            $solicitud = self::$cnx->prepare($query);
-            $solicitud->bindParam(":nombrePDO", $this->nombre);
-            $solicitud->bindParam(":apellidoPDO", $this->apellidos);
-            $solicitud->bindParam(":detallesRescatePDO", $this->detalleRescate);
-            $solicitud->bindParam(":detallesAnimalPDO", $this->detalleAnimal);
-            $solicitud->bindParam(":correoPDO", $this->correo);
-            $solicitud->bindParam(":telefonoPDO", $this->telefono);
-            $solicitud->bindParam(":estadoPDO", $this->estado);
-            $solicitud->bindParam(":ubicacionPDO", $ubicacion);
-
-            $solicitud->execute();
-            self::desconectar();
-        } catch (PDOException $Exception) {
-            self::desconectar();
-            $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
-            return $error;
-        }
-    }
+    }
 
     public function listarSolicitudes() 
     {
@@ -200,4 +167,4 @@ class SolicitudApoyoModel extends Conexion
 }
 
 }
-
+?>

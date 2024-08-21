@@ -8,7 +8,7 @@
     margin: 0 auto; /* Centra horizontalmente */
     display: flex;
     flex-direction: column; /* Para que el contenido se apile verticalmente */
-    align-items: center; /* Centra los elementos hijos horizontalmente */
+    align-items: center; 
 }
 
 .titulo {
