@@ -54,7 +54,8 @@ $encontrados = EncontradoModel::obtenerEncontrados();
                             <p class="card-text"><strong>Color de Pelaje:</strong> <?= $encontrado['colorPelaje'] ?></p>
                             <p class="card-text"><strong>Ubicación:</strong> <?= $encontrado['ubiEncontrado'] ?></p>                                                        
                             <div class="col-12 mt-3 text-center">
-                            <a href="solicitudAdopcion.php?id=<?= $encontrado['idAnimal'] ?>" class="btn btn-primary mb-4">Enviar solicitud de adopción</a>
+                                                            
+                            <a href="solicitudAdopcion.php" class="btn btn-primary mb-4">Enviar solicitud de adopción</a>
 
                             </div>
                         </div>

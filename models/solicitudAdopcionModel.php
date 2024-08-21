@@ -118,7 +118,7 @@ class solicitudAdopcionModel extends Conexion
 
             $resultado = self::$cnx->prepare($query);
             $resultado->bindParam(":idAnimalPDO", $idAnimalP, PDO::PARAM_INT);
-            $resultado->bindParam(":idUsuarioPDO", $idUsuarioP, PDO::PARAM_STR);
+            $resultado->bindParam(":idUsuarioPDO", $idUsuarioP, PDO::PARAM_INT);
             $resultado->bindParam(":nombrePDO", $nombreP, PDO::PARAM_STR);
             $resultado->bindParam(":correoPDO", $correoP, PDO::PARAM_STR);
             $resultado->bindParam(":direccionPDO", $direccionP, PDO::PARAM_STR);

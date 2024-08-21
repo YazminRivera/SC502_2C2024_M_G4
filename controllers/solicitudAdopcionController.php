@@ -1,11 +1,8 @@
 <?php
 require_once '../models/solicitudAdopcionModel.php';
 
-session_start();
-
-if(isset($_SESSION['user'])){
-$idUsuario = $_SESSION["user"]["idUsuario"];
-$idAnimal = (isset($_POST["idAnimal"])) ? $_POST["idAnimal"] : "";
+$idUsuario = (isset($_POST["idUsuarioSoliAdopcion"])) ? $_POST["idUsuarioSoliAdopcion"] : ""; 
+$idAnimal = (isset($_POST["animalSoliAdopcion"])) ? $_POST["animalSoliAdopcion"] : "";
 $nombreSoliAdopcion = (isset($_POST["nombreSoliAdopcion"])) ? $_POST["nombreSoliAdopcion"] : "";
 $correoSoliAdopcion = (isset($_POST["correoSoliAdopcion"])) ? $_POST["correoSoliAdopcion"] : "";
 $telefonoSoliAdopcion = (isset($_POST["telefonoSoliAdopcion"])) ? $_POST["telefonoSoliAdopcion"] : "";
@@ -29,9 +26,6 @@ try {
     $resp = array("exito" => false, "msg" => "Se presentó un error");
     echo json_encode($resp);
 }
-} else{
-    $resp = array("exito" => false, "msg" => "No está logueado");
-    echo json_encode($resp);
-}
+
 
 ?>
