@@ -89,6 +89,7 @@
                         } else {
                             echo $_SESSION['user']['idUsuario'];
                         }?>">
+                        <input type="hidden" name="estado" id="estado" value="1">
                     <div class="col-12 mt-3 boton-end">
                         <button class="btn-Enviar" type="submit">Enviar</button>
                     </div>

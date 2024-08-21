@@ -6,8 +6,12 @@
         private $idUsuario; 
         private $detalleRescate; 
         private $detalleAnimal; 
-        private $userLatitude; 
-        private $userLongitude; 
+        private $ubicacion; 
+        private $nombre; 
+        private $apellido; 
+        private $correo; 
+        private $telefono; 
+        private $estado; 
 
         public function getIdApoyo(){
             return $this->idApoyo;
@@ -21,11 +25,23 @@
         public function getDetalleAnimal(){
             return $this->detalleAnimal;
         }
-        public function getUserLatitude(){
-            return $this->userLatitude;
+        public function getubicacion(){
+            return $this->ubicacion;
         }
-        public function getUserLongitude(){
-            return $this->userLongitude;
+        public function getNombre(){
+            return $this->nombre;
+        }
+        public function getApellidos(){
+            return $this->apellido;
+        }
+        public function getCorreo(){
+            return $this->correo;
+        }
+        public function getTelefono(){
+            return $this->telefono;
+        }
+        public function getEstado(){
+            return $this->estado;
         }
         public function setIdApoyo($idApoyo) {
             $this->idApoyo = $idApoyo;
@@ -39,11 +55,23 @@
         public function setDetalleAnimal($detalleAnimal) {
             $this->detalleAnimal = $detalleAnimal;
         }
-        public function setUserLatitude($userLatitude){
-            $this->userLatitude = $userLatitude;
+        public function setUbicacion($ubicacion){
+            $this->ubicacion = $ubicacion;
         }
-        public function setUserLongitude($userLongitude){
-            $this->userLongitude = $userLongitude;
+        public function setNombre($nombre){
+            $this->nombre = $nombre;
+        }
+        public function setApellidos($apellido){
+            $this->apellido = $apellido;
+        }
+        public function setCorreo($correo){
+            $this->correo = $correo;
+        }
+        public function setTelefono($telefono){
+            $this->telefono = $telefono;
+        }
+        public function setEstado($estado){
+            $this->estado = $estado;
         }
 
         public static function getConexion(){
@@ -55,20 +83,26 @@
         }
     
         public function solicitudApoyo(){
-            $query = "INSERT INTO `sc502apoyo`(`idUsuario`, `detalleRescate`, `detalleAnimal`, `userLatitude`, `userLongitude`) VALUES (:idUsuarioPDO,:detalleRescatePDO,:detalleAnimalPDO,:userLatitudePDO,:userLongitudePDO)";
+            $query = "INSERT INTO `sc502solicitudesapoyo`(`nombre`, `apellido`, `detalles_rescate`, `detalles_animal`, `correo`, `telefono`, `ubicacion`, `estado`) VALUES (:nombrePDO,:apellidoPDO,:detalleRescatePDO,:detalleAnimalPDO,:correoPDO,:telefonoPDO,:ubicacionPDO,:estadoPDO)";
             try{
                 self::getConexion();
-                $idUsuario = $this ->getIdUsuario(); 
+                $nombre = $this ->getNombre(); 
+                $apellido = $this ->getApellidos();
                 $detalleRescate = $this -> getDetalleRescate(); 
                 $detalleAnimal = $this -> getDetalleAnimal(); 
-                $userLatitude = $this -> getUserLatitude(); 
-                $userLongitude = $this -> getUserLongitude(); 
+                $correo =  $this -> getCorreo(); 
+                $telefono =  $this -> getTelefono(); 
+                $ubicacion = $this -> getubicacion();  
+                $estado =  $this -> getEstado(); 
                 $solicitud = self::$cnx->prepare($query);
-                $solicitud->bindParam(":idUsuarioPDO", $idUsuario, PDO::PARAM_INT);
+                $solicitud->bindParam(":nombrePDO", $nombre, PDO::PARAM_STR);
+                $solicitud->bindParam(":apellidoPDO", $apellido, PDO::PARAM_STR);
                 $solicitud->bindParam(":detalleRescatePDO", $detalleRescate, PDO::PARAM_STR);
                 $solicitud->bindParam(":detalleAnimalPDO", $detalleAnimal, PDO::PARAM_STR);
-                $solicitud->bindParam(":userLatitudePDO", $userLatitude, PDO::PARAM_STR);
-                $solicitud->bindParam(":userLongitudePDO", $userLongitude, PDO::PARAM_STR);
+                $solicitud->bindParam(":correoPDO", $correo, PDO::PARAM_STR);
+                $solicitud->bindParam(":telefonoPDO", $telefono, PDO::PARAM_STR);
+                $solicitud->bindParam(":ubicacionPDO", $ubicacion, PDO::PARAM_STR);
+                $solicitud->bindParam(":estadoPDO", $estado, PDO::PARAM_INT);
                 $solicitud->execute();
                 self::desconectar();
             }catch (PDOException $Exception){

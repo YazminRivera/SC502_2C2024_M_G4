@@ -84,8 +84,7 @@ $(document).ready(function () {
       toastr.error("Hay uno o más campos incompletos");
     } else {
       var formData = new FormData($("#formSolicitudApoyo")[0]);
-      formData.append("userLatitude", userLatitude);
-      formData.append("userLongitude", userLongitude);
+      formData.append("ubicacion", userLatitude + ", "+userLongitude);
       $.ajax({
         url: "../controllers/solicitudApoyoController.php",
         type: "POST",
