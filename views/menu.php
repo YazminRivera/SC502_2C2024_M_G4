@@ -21,27 +21,8 @@
             <a class="nav-link" href="index.php">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="verAnimales.php">Animales Registrados</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="encontrados.php">Encontrados</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="desapariciones.php">Desapariciones</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="adopciones.php">Adopciones</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="infoCas.php">Información Campañas</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="solicitud_apoyo.php">Solicitar Apoyo</a>
-          </li>
-          </li>
-          <li class="nav-item">
-          <a class="nav-link" href="vistaSolicitudesApoyo.php">Solicitudes Apoyo</a>
-        </li>
         </ul>
       </div>
     </div>

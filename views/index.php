@@ -38,7 +38,7 @@
                         class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://diariolaportada.com.ar/wp-content/uploads/2021/09/242373766_4753188301380635_4706435313204854438_n.jpg"
+                    <img src="https://purina.com.mx/sites/default/files/styles/webp/public/2022-10/purina-consulta-veterinaria-para-mascotas-lo-que-debes-saber.jpg.webp?itok=JO3-RGTT"
                         class="d-block w-100" alt="...">
                 </div>
             </div>
