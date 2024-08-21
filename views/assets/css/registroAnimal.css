@@ -1,0 +1,41 @@
+.registroAnimal {
+    background-color: #3fcfb7;
+    border-radius: 30px;
+  }
+  
+  .text-center{
+    text-shadow: 1px 1px 2px black;
+    font-size: 1.70rem;
+  }
+  .form-label {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    font-size: 1.45rem;
+  }
+  .text {
+    background: white;
+    border-radius: 12px;
+    margin-right: 20px;
+  }
+  .textArea {
+    background: white;
+    border-radius: 15px;
+    margin-right: 20px;
+  }
+  .mb-3 {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .col-6 {
+    padding: 15px;
+    color: white;
+  }
+  .btn-Enviar {
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: teal;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    border: solid teal;
+    font-size: 1.30rem;
+  }

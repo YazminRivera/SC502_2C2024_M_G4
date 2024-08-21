@@ -1,0 +1,53 @@
+/* Seccion superior */
+.seccion1 {
+  background-color: #35ad99;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 500;
+}
+
+/* Seccion inferior */
+.bottom-bar {
+  background-color: #3fcfb7;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Centrar los elementos de la sección inferior */
+.navbar-nav {
+  justify-content: center;
+  width: 100%;
+}
+
+/* Quitar el padding por defecto de Bootstrap en la barra de navegación */
+.navbar {
+  padding: 0;
+}
+
+/* Botón de inicio de sesión */
+.btnInicio {
+  background-color: #3fcfb7;
+  border-color: #3fcfb7;
+  color: teal;
+} 
+
+/* Botón de registro */
+.btnRegistro {
+  background-color: teal;
+  border-color: teal;
+  color: white;
+}
+
+/* Separar los elementos de la segunda sección */
+.nav-item {
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+/* Letra en blanco de los elementos de la sección inferior con sombra de texto para mejorar la legibilidad */
+.nav-link {
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  font-size: 1.65rem;
+}
