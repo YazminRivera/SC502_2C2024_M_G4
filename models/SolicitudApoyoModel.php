@@ -110,10 +110,7 @@
                 $error = "Error " . $Exception->getCode() . ": " . $Exception->getMessage();
                 return $error;
             }   
-        }
-
-    }
-
+        }
     public function listarSolicitudes() 
     {
         $query = "SELECT * FROM `sc502solicitudesapoyo`";
