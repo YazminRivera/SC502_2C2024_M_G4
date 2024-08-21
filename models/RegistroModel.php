@@ -1,6 +1,6 @@
 <?php
 require_once '../config/conexion.php';
-class RegistroModel extends conexion
+class RegistroModel extends Conexion
 {
     protected static $cnx;
     private $idUsuario = null;

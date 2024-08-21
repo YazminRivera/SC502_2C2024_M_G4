@@ -1,5 +1,6 @@
 <?php
 require_once '../models/inicioSesionModel.php';
+
 session_start();
 
 $correo = $_POST['correo'] ?? "";
