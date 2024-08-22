@@ -136,12 +136,13 @@ class RegistroModel extends Conexion
             $contrasena = $this->getContrasena();
             $rol = $this->getRol();
             $estado = $this->getEstado();
+            $passwordHash = password_hash($contrasena,PASSWORD_BCRYPT);
             $resultado = self::$cnx->prepare($query);
             $resultado->bindParam(":nombrePDO", $nombre, PDO::PARAM_STR);
             $resultado->bindParam(":apellidosPDO", $apellidos, PDO::PARAM_STR);
             $resultado->bindParam(":correoPDO", $correo, PDO::PARAM_STR);
             $resultado->bindParam(":telefonoPDO", $telefono, PDO::PARAM_STR);
-            $resultado->bindParam(":contrasenaPDO", $contrasena, PDO::PARAM_STR);
+            $resultado->bindParam(":contrasenaPDO", $passwordHash, PDO::PARAM_STR);
             $resultado->bindParam(":rolPDO", $rol, PDO::PARAM_STR);
             $resultado->bindParam(":estadoPDO", $estado, PDO::PARAM_STR);
             $resultado->execute();

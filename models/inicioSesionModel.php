@@ -48,18 +48,24 @@ class InicioSesionModel extends Conexion{
     }
 
     public function iniciarSesion() {
+        self::getConexion();
+        $query = "SELECT idUsuario, nombre, apellidos, correo, telefono, rol, estado FROM `sc502usuario` WHERE correo = :correo";
+        $stmt = conexion::conectar()->prepare($query);
+        $stmt->bindParam(':correo', $this->correo, PDO::PARAM_STR);
+        $stmt->execute();
+        $usuario = $stmt->fetch(PDO::FETCH_OBJ);
+        return $usuario;
+        self::desconectar(); 
+    }
+
+    public function verificarContraseña(){
         $contrasenaAlmacenada = $this->obtenerContrasena();
         $contrasenaIngresada = $this->getContrasena(); 
-        
-        if ($contrasenaAlmacenada !== false && $contrasenaAlmacenada === $contrasenaIngresada) {
-            self::getConexion();
-            $query = "SELECT idUsuario, nombre, apellidos, correo, telefono, rol, estado FROM `sc502usuario` WHERE correo = :correo";
-            $stmt = conexion::conectar()->prepare($query);
-            $stmt->bindParam(':correo', $this->correo, PDO::PARAM_STR);
-            $stmt->execute();
-            $usuario = $stmt->fetch(PDO::FETCH_OBJ);
-            self::desconectar(); 
-            return $usuario;
+        $contrasenaIngresada = password_hash($contrasenaIngresada, PASSWORD_BCRYPT);
+        $comprobarContraseña = password_verify($contrasenaIngresada, $contrasenaAlmacenada);
+        if ($comprobarContraseña === true) {
+            $inicio = $this->iniciarSesion();
+            return true;
         }
         return false; 
     }
